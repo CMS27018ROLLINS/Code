@@ -1,29 +1,26 @@
+import java.util.HashMap;
 
-public class Doctor extends People implements Infomation {
-
+public class Doctor extends People /*implements Information*/ {
+	
+	private String spec; // Specialization
 
 	public Doctor() {
-		// TODO Auto-generated constructor stub
+		super();
+		spec = "";
 	}
-
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return name;
-	}
-
-
-	@Override
-	public String getAddress() {
-		// TODO Auto-generated method stub
-		return address;
-	}
-
-	@Override
-	public String getTel() {
-		// TODO Auto-generated method stub
-		return tel;
-	}
-
 	
+	public Doctor(String u_Name, String u_Address, String u_Tel, String u_Spec){
+		super(u_Name, u_Address, u_Tel);
+		spec = u_Spec;
+	}
+
+	public String getSpec() {
+		return spec;
+	}
+
+	public void setSpec(String u_Spec) {
+		spec = u_Spec;
+	}
+
+
 }

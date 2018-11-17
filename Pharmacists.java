@@ -1,37 +1,36 @@
-
-public class Pharmacists extends People implements Infomation{
+public class Pharmacists extends People /*implements Information*/{
 
 	private String certdate; 
+	private String ssn_Number;
+	
 	public Pharmacists() {
-		// TODO Auto-generated constructor stub
+		super();
+		certdate = "";
+		ssn_Number = "";
+	}
+	
+	public Pharmacists(String u_Name, String u_Address, String u_Tel, String u_cert, String u_SSN){
+		super(u_Name, u_Address, u_Tel);
+		certdate = u_cert;
+		ssn_Number = u_SSN;
 	}
 
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return name;
-	}
-
-	@Override
-	public String getSsn() {
-		// TODO Auto-generated method stub
-		return ssn;
-	}
-
-	@Override
-	public String getAddress() {
-		// TODO Auto-generated method stub
-		return address;
-	}
-
-	@Override
-	public String getTel() {
-		// TODO Auto-generated method stub
-		return tel;
-	}
-
-	public String getCertDate() { 
+	public String getCertdate() {
 		return certdate;
 	}
+
+	public void setCertdate(String u_Certdate) {
+		certdate = u_Certdate;
+	}
+
+	public String getSsn_Number() {
+		return ssn_Number;
+	}
+
+	public void setSsn_Number(String u_SSN) {
+		ssn_Number = u_SSN;
+	}
+	
+
 
 }
