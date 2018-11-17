@@ -9,6 +9,7 @@ public class Drugs {
 	private String type;
 	private ArrayList<String> contraInd = new ArrayList<>();
 	private int stipTimes;
+	private Boolean monitored;
 	
 	public Drugs() {
 		name = "";
@@ -83,6 +84,16 @@ public class Drugs {
 	public void setStipTimes(int u_stipTimes) {
 		stipTimes = u_stipTimes;
 	}
+
+	public Boolean getMonitored() {
+		return monitored;
+	}
+
+	public void setMonitored(Boolean u_Monitored) {
+		monitored = u_Monitored;
+	}
+	
+	
 	
 	
 	
