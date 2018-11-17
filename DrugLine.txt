@@ -1,0 +1,7 @@
+1 Amoxicilin 3 1
+1 Vicodin 2 1
+2 Ibuprofen 3 2
+2 Morphine 1 0
+3 Vicodin 1 0
+4 Amoxicilin 1 0
+5 Vicodin 1 0
