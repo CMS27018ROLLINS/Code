@@ -1,6 +1,7 @@
 
 public class Doctor extends People implements Infomation {
 
+
 	public Doctor() {
 		// TODO Auto-generated constructor stub
 	}
@@ -11,11 +12,6 @@ public class Doctor extends People implements Infomation {
 		return name;
 	}
 
-	@Override
-	public String getSsn() {
-		// TODO Auto-generated method stub
-		return ssn;
-	}
 
 	@Override
 	public String getAddress() {
@@ -29,10 +25,5 @@ public class Doctor extends People implements Infomation {
 		return tel;
 	}
 
-	@Override
-	public String getProvider() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }

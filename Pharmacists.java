@@ -30,11 +30,6 @@ public class Pharmacists extends People implements Infomation{
 		return tel;
 	}
 
-	@Override
-	public String getProvider() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	public String getCertDate() { 
 		return certdate;
 	}
