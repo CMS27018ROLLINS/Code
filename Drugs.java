@@ -8,21 +8,24 @@ public class Drugs {
 	private String manufacture;
 	private String type;
 	private ArrayList<String> contraInd = new ArrayList<>();
+	private int stipTimes;
 	
 	public Drugs() {
 		name = "";
 		chem_Name = "";
 		manufacture = "";
 		type = "";
+		stipTimes = 0;
 	}
 	
-	public Drugs(String u_Name, String u_chemName, ArrayList<String> u_Ing, String u_Manu, String u_Type, ArrayList<String> u_con){
+	public Drugs(String u_Name, String u_chemName, ArrayList<String> u_Ing, String u_Manu, String u_Type, ArrayList<String> u_con, int u_StipTimes){
 		name = u_Name;
 		chem_Name = u_chemName;
 		ingredients = u_Ing;
 		manufacture = u_Manu;
 		type = u_Type;
-		contraInd = u_con;		
+		contraInd = u_con;
+		stipTimes = u_StipTimes;
 	}
 
 	public String getName() {
@@ -72,6 +75,16 @@ public class Drugs {
 	public void setContraInd(ArrayList<String> u_ContraInd) {
 		contraInd = u_ContraInd;
 	}
+
+	public int getStipTimes() {
+		return stipTimes;
+	}
+
+	public void setStipTimes(int u_stipTimes) {
+		stipTimes = u_stipTimes;
+	}
+	
+	
 	
 	
 
