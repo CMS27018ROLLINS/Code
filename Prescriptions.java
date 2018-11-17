@@ -2,6 +2,7 @@ public class Prescriptions {
 	
 	private int pre_ID;
 	private String date;
+	private String patient;
 	private String doctor;
 	private String pharmacist;
 
@@ -31,6 +32,16 @@ public class Prescriptions {
 
 	public void setDate(String u_Date) {
 		date = u_Date;
+	}
+	
+	
+
+	public String getPatient() {
+		return patient;
+	}
+
+	public void setPatient(String u_Patient) {
+		patient = u_Patient;
 	}
 
 	public String getDoctor() {
