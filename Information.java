@@ -1,5 +1,7 @@
 public interface Information {
- public String getName();
- public String getAddress();
- public String getTel(); 
-}
+	
+ public String TransactionsProcessed();
+ public String UnableToFillPrescription();
+ public String PrescriptionFilledSuccessfully();
+ 
+ }

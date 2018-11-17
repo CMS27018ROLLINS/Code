@@ -6,11 +6,13 @@ public class Prescriptions {
 
 	public Prescriptions() {
  		pre_ID = 0;
+ 		date = "";
 		pharmacist = "";		
 	}
 	
-	public Prescriptions(int u_ID, String u_Phar){
+	public Prescriptions(int u_ID,String u_Date, String u_Phar){
 		pre_ID = u_ID;
+		date = u_Date;
 		pharmacist = u_Phar;
 	}
 
