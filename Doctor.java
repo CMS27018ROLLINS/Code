@@ -21,6 +21,13 @@ public class Doctor extends People /*implements Information*/ {
 	public void setSpec(String u_Spec) {
 		spec = u_Spec;
 	}
-
+//----------------Get Info--------------------------------------
+	public String getInfo() { 
+		 return "Name: " + super.getName() +
+				 "Specilization: " + getSpec() + 
+				 "Tel: " + super.getTel()+
+				 "Address: " + super.getAddress();
+		
+	}
 
 }
