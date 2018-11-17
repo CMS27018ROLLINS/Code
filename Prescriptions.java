@@ -1,6 +1,7 @@
 public class Prescriptions {
 	
 	private String pre_ID;
+	private String date;
 	private String pharmacist;
 
 	public Prescriptions() {
@@ -19,6 +20,14 @@ public class Prescriptions {
 
 	public void setPre_ID(String u_preID) {
 		pre_ID = u_preID;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String u_Date) {
+		date = u_Date;
 	}
 
 	public String getPharmacist() {
