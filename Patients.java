@@ -1,38 +1,34 @@
-
-public class Patients extends People implements Infomation {
+public class Patients extends People /*implements Information*/ {
+	
+	private String insProvider;
+	private String ssn_Number;
 	
 	public Patients() {
-		// TODO Auto-generated constructor stub
+		super();
+		insProvider = "";
+		ssn_Number = "";
+	}
+	
+	public Patients(String u_Name, String u_Address, String u_Tel, String u_Provider, String u_SSN){
+		super(u_Name, u_Address, u_Tel);
+		insProvider = u_Provider;
+		ssn_Number = u_SSN;
 	}
 
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return name;
+	public String getInsProvider() {
+		return insProvider;
 	}
 
-	@Override
-	public String getSsn() {
-		// TODO Auto-generated method stub
-		return ssn;
+	public void setInsProvider(String u_insProvider) {
+		insProvider = u_insProvider;
 	}
 
-	@Override
-	public String getAddress() {
-		// TODO Auto-generated method stub
-		return address;
+	public String getssn_Number() {
+		return ssn_Number;}
+
+	public void setSSN(String u_SSN) {
+		ssn_Number = u_SSN;
 	}
 
-	@Override
-	public String getTel() {
-		// TODO Auto-generated method stub
-		return tel;
-	}
-
-	@Override
-	public String getProvider() {
-		// TODO Auto-generated method stub
-		return provider;
-	}
 
 }
