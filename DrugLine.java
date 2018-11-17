@@ -1,28 +1,28 @@
 
 public class DrugLine extends Prescriptions {
-	private int dosage;
+	private String dosage;
 	private int refillsLeft;
 	private int timesFilled;
 	
 	public DrugLine(){
 		super();
-		dosage = 0;
+		dosage = "";
 		refillsLeft = 0;
 		timesFilled = 0;
 	}
 	
-	public DrugLine(int u_ID,String u_Date, String u_Phar, int u_Dos, int u_RefLeft, int u_TimesFilled){
+	public DrugLine(int u_ID,String u_Date, String u_Phar, String u_Dos, int u_RefLeft, int u_TimesFilled){
 		super(u_ID, u_Date, u_Phar);
 		dosage = u_Dos;
 		refillsLeft = u_RefLeft;
 		timesFilled = u_TimesFilled;
 	}
 
-	public int getDosage() {
+	public String getDosage() {
 		return dosage;
 	}
 
-	public void setDosage(int u_Dosage) {
+	public void setDosage(String u_Dosage) {
 		dosage = u_Dosage;
 	}
 
