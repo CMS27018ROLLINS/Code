@@ -1,5 +1,14 @@
 Drug1,ChemName1,Manufacture1,Type1,Ingredient11,Ingredient12,/,ContraIndication11,ContraIndication12
-Drug2,ChemName2,Manufacture2,Type2,Ingredient21,Ingredient22,/,ContraIndication21,ContraIndication22
-Drug3,ChemName3,Manufacture3,Type3,Ingredient31,Ingredient32,/,ContraIndication31,ContraIndication32
-Drug4,ChemName4,Manufacture4,Type4,Ingredient41,Ingredient42,/,ContraIndication41,ContraIndication42
-Drug5,ChemName5,Manufacture5,Type5,Ingredient51,Ingredient52,/,ContraIndication51,ContraIndication52
+Vicodin,Acetaminophen,Epocrates,Opiate,colloidalsilicon dioxide,crospovidone,magnesium stearate,microcrystalline cellulose,/,somethingHere
+Synthroid,Levothyroxine,Abbott Labs,Steroid,Acacia,sugar,corn starch,lactose monohydrate,/,somethingHere
+Delasone,Pregna,Manufact Inc,Corticosteroids,Calcium Stearate,Corn Starch,Erythrosine Sodium,Lactose,Mineral Oil,/,somethingHere
+Amoxil,Amoxipen,Epocrates,Antibiotic,D&C Red No. 28,FD&C Blue No. 1,FD&C Red No. 40,gelatin,magnesium stearate,/,somethingHere
+Neurontin,Gabapentin,Drugs Inc,Anticonvulsant,lactose, cornstarch, talc, gelatin, titanium dioxide,/,somethingHere
+Prinivil,lisinopril,Merck,antihypertensive,lisinopril,calcium phosphate,mannitol,magnesium stearate,startch,/,Hypersensitivity,Angioedema
+Lipitor,Atorvastatin,Pfizer,statin,calcium carbonate,candelilla wax,croscarmellose sodium,/,Hypersensitivity, Nursing Mothers, Active Liver Disease
+Glucpphage,Metformin,Bristol-Myers Squibb,biguanides,sodium carboxymethyl cellulose,hypromellose,microcrystalline cellulose,/,Acute or chronic metabolic acidosis
+Zofran,Ondansetron,GlaxoSmithKline,Antiemetic,aspartame,gelatin,mannitol,methylparaben sodium,propylparaben sodium,/,Concomitant use of apomorphine
+Motrin,propanoic acid,Johnson&Johnson,NSAID,carnauba wax,colloidal silicon dioxide,croscarmellose sodium,hypromellose,lactose,/,asthma, urticaria, hypersensitivity
+Ramipril,Tritace,Pfizer,Angiotensin,calcium sulphate dihydrate,pregelatinized starch,sodium bicarbonate,/,hypersensitive
+Co-codamol,Codeine/acetaminophen,Zentiva,Painkiller,povidone,talc, stearic acid,magnesium stearate,/,Liver failure, asthma, head injuries
+Amoxicillin,Carboxylic Acid,Drugs Inc,Antibiotic,magnesium stearate,maize starch,gelatin, erythrosin,/,eczema, hives, hay fever
