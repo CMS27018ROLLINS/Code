@@ -34,7 +34,7 @@ public class Prescriptions {
 		return doctor;
 	}
 
-	public void setPharmacist(String u_Doc) {
+	public void setDoctor(String u_Doc) {
 		doctor = u_Doc;
 	}
 	
