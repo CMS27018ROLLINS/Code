@@ -1,3 +1,6 @@
+//May Phan, Felipe Jordao, Lauren Hancock
+//CMS 270 Fall 2018
+
 import java.util.ArrayList;
 
 public class Drugs {
@@ -7,6 +10,7 @@ public class Drugs {
 	private ArrayList<String> ingredients = new ArrayList<>();
 	private String manufacture;
 	private String type;
+	private ArrayList<String> conditions = new ArrayList<>();//add setters and getters
 	private ArrayList<String> contraInd = new ArrayList<>();
 	private int stipTimes;
 	private Boolean monitored;
@@ -29,6 +33,8 @@ public class Drugs {
 		stipTimes = u_StipTimes;
 	}
 
+	//------------------------------------------------------------------------
+	//***Getters and Setters - blocked by get and set pairs***
 	public String getName() {
 		return name;
 	}
@@ -36,7 +42,7 @@ public class Drugs {
 	public void setName(String u_Name) {
 		name = u_Name;
 	}
-
+	//------------------------------------------------------------------------
 	public String getChem_Name() {
 		return chem_Name;
 	}
@@ -44,7 +50,7 @@ public class Drugs {
 	public void setChem_Name(String u_chemName) {
 		chem_Name = u_chemName;
 	}
-
+	//------------------------------------------------------------------------
 	public ArrayList<String> getIngredients() {
 		return ingredients;
 	}
@@ -52,7 +58,15 @@ public class Drugs {
 	public void setIngredients(ArrayList<String> u_ingredients) {
 		ingredients = u_ingredients;
 	}
-
+	//------------------------------------------------------------------------
+	public ArrayList<String> getConditions(){
+		return conditions;
+	}
+	public void setConditions(ArrayList<String> u_conditions) {
+		conditions = u_conditions;
+	}
+	
+	//------------------------------------------------------------------------
 	public String getManufacture() {
 		return manufacture;
 	}
@@ -60,7 +74,7 @@ public class Drugs {
 	public void setManufacture(String u_manufacture) {
 		manufacture = u_manufacture;
 	}
-
+	//------------------------------------------------------------------------
 	public String getType() {
 		return type;
 	}
@@ -68,7 +82,7 @@ public class Drugs {
 	public void setType(String u_Type) {
 		type = u_Type;
 	}
-
+	//------------------------------------------------------------------------
 	public ArrayList<String> getContraInd() {
 		return contraInd;
 	}
@@ -76,7 +90,7 @@ public class Drugs {
 	public void setContraInd(ArrayList<String> u_ContraInd) {
 		contraInd = u_ContraInd;
 	}
-
+	//------------------------------------------------------------------------
 	public int getStipTimes() {
 		return stipTimes;
 	}
@@ -84,7 +98,7 @@ public class Drugs {
 	public void setStipTimes(int u_stipTimes) {
 		stipTimes = u_stipTimes;
 	}
-
+	//------------------------------------------------------------------------
 	public Boolean getMonitored() {
 		return monitored;
 	}
@@ -92,11 +106,8 @@ public class Drugs {
 	public void setMonitored(Boolean u_Monitored) {
 		monitored = u_Monitored;
 	}
-	
-	
-	
-	
-	
-	
+	//------------------------------------------------------------------------
+
+
 
 }

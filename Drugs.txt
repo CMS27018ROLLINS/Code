@@ -1,5 +1,6 @@
 Drug1,ChemName1,Manufacture1,Type1,Ingredient11,Ingredient12,/,ContraIndication11,ContraIndication12
-Vicodin,Acetaminophen,Epocrates,Opiate,colloidalsilicon dioxide,crospovidone,magnesium stearate,microcrystalline cellulose,/,somethingHere
+
+Vicodin,Acetaminophen,Epocrates,Opiate,colloidalsilicon dioxide,crospovidone,magnesium stearate,microcrystalline cellulose,/,Naltrexone, Acetaminophen, Hydrocodone
 Synthroid,Levothyroxine,Abbott Labs,Steroid,Acacia,sugar,corn starch,lactose monohydrate,/,somethingHere
 Delasone,Pregna,Manufact Inc,Corticosteroids,Calcium Stearate,Corn Starch,Erythrosine Sodium,Lactose,Mineral Oil,/,somethingHere
 Amoxil,Amoxipen,Epocrates,Antibiotic,D&C Red No. 28,FD&C Blue No. 1,FD&C Red No. 40,gelatin,magnesium stearate,/,somethingHere
@@ -7,8 +8,13 @@ Neurontin,Gabapentin,Drugs Inc,Anticonvulsant,lactose, cornstarch, talc, gelatin
 Prinivil,lisinopril,Merck,antihypertensive,lisinopril,calcium phosphate,mannitol,magnesium stearate,startch,/,Hypersensitivity,Angioedema
 Lipitor,Atorvastatin,Pfizer,statin,calcium carbonate,candelilla wax,croscarmellose sodium,/,Hypersensitivity, Nursing Mothers, Active Liver Disease
 Glucpphage,Metformin,Bristol-Myers Squibb,biguanides,sodium carboxymethyl cellulose,hypromellose,microcrystalline cellulose,/,Acute or chronic metabolic acidosis
-Zofran,Ondansetron,GlaxoSmithKline,Antiemetic,aspartame,gelatin,mannitol,methylparaben sodium,propylparaben sodium,/,Concomitant use of apomorphine
-Motrin,propanoic acid,Johnson&Johnson,NSAID,carnauba wax,colloidal silicon dioxide,croscarmellose sodium,hypromellose,lactose,/,asthma, urticaria, hypersensitivity
+Zofran,Ondansetron,GlaxoSmithKline,Antiemetic,aspartame,gelatin,mannitol,methylparaben sodium,propylparaben sodium,/,Clarithromycin, Lotronex
+Motrin,propanoic acid,Johnson&Johnson,NSAID,carnauba wax,colloidal silicon dioxide,croscarmellose sodium,hypromellose,lactose,/,Aleve
 Ramipril,Tritace,Pfizer,Angiotensin,calcium sulphate dihydrate,pregelatinized starch,sodium bicarbonate,/,hypersensitive
-Co-codamol,Codeine/acetaminophen,Zentiva,Painkiller,povidone,talc, stearic acid,magnesium stearate,/,Liver failure, asthma, head injuries
+Co-codamol,Codeine,Acetaminophen,Zentiva,Painkiller,povidone,talc, stearic acid,magnesium stearate,/,Liver failure, asthma, head injuries
 Amoxicillin,Carboxylic Acid,Drugs Inc,Antibiotic,magnesium stearate,maize starch,gelatin, erythrosin,/,eczema, hives, hay fever
+Naltrexone,Vivitrex,Pfizer,Opiate,naltrexone hydrochloride,lactose,microcrystalline cellulose,crospovidone,silicon dioxide,magnesium stearate/,Vicodin,
+Hydrocodone,Dihydrocodeinone,Epocrates,Opiate,colloidal silicon dioxide,crospovidone,magnesium stearate,microcrystalline cellulose,povidone,pregelatinized starch/,Vicodin
+Clarithromycin,/,Zofran
+Lotronex, Serotonin,/,Zofran
+Aleve,Naproxen,Abbott Labs,NSAID,FD&C blue #2 lake,hypromellose,magnesium stearate,microcrystalline cellulose,polyethylene glycol,povidone,talc/,Motrin
