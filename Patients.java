@@ -1,4 +1,4 @@
-public class Patients extends People /*implements Information*/ {
+public class Patients extends People {
 	
 	private String insProvider;
 	private String ssn_Number;
@@ -29,6 +29,11 @@ public class Patients extends People /*implements Information*/ {
 	public void setSSN(String u_SSN) {
 		ssn_Number = u_SSN;
 	}
+	
+	public String getInfo() {
+		 return "Name: " + super.getName() + " Provider: " + getInsProvider() + " SSN: " + getssn_Number() + " Tel: " + super.getTel() + " Address: " + super.getAddress();
+	} 
+
 
 
 }

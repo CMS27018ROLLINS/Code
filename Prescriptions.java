@@ -2,16 +2,24 @@ public class Prescriptions {
 	
 	private int pre_ID;
 	private String date;
+	private String patient;
 	private String doctor;
+	private String pharmacist;
 
 	public Prescriptions() {
  		pre_ID = 0;
-		doctor = "";		
+ 		date = "";
+ 		patient = "";
+		doctor = "";
+		pharmacist = "";
 	}
 	
-	public Prescriptions(int u_ID, String u_Doc){
+	public Prescriptions(int u_ID,String u_Date, String u_Patient, String u_Doc, String u_Phar){
 		pre_ID = u_ID;
-		doctor= u_Doc;
+		date = u_Date;
+		patient = u_Patient;
+		doctor = u_Doc;
+		pharmacist = u_Phar;
 	}
 
 	public int getPre_ID() {
@@ -29,6 +37,14 @@ public class Prescriptions {
 	public void setDate(String u_Date) {
 		date = u_Date;
 	}
+	
+	public String getPatient() {
+		return patient;
+	}
+
+	public void setPatient(String u_Patient) {
+		patient = u_Patient;
+	}
 
 	public String getDoctor() {
 		return doctor;
@@ -37,6 +53,20 @@ public class Prescriptions {
 	public void setDoctor(String u_Doc) {
 		doctor = u_Doc;
 	}
+
+	public String getPharmacist() {
+		return pharmacist;
+	}
+
+	public void setPharmacist(String u_Pharmacist) {
+		pharmacist = u_Pharmacist;
+	}
+	
+	public String getInfo() {
+		 return "Prescription ID: " + getPre_ID() + " Date: " + getDate() + " Patient: " + getPatient() + " \n Doctor: " + getDoctor() + " Pharmacist: " + getPharmacist() +
+				 " \n----------------------------------------------------" + "\n";
+	} 
+
 	
 	
 
