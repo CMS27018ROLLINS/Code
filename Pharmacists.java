@@ -1,4 +1,4 @@
-public class Pharmacists extends People /*implements Information*/{
+public class Pharmacists extends People {
 
 	private String certdate; 
 	private String ssn_Number;
@@ -30,6 +30,11 @@ public class Pharmacists extends People /*implements Information*/{
 	public void setSsn_Number(String u_SSN) {
 		ssn_Number = u_SSN;
 	}
+	
+	public String getInfo() {
+		 return "Name: " + super.getName() + " Cert Date: " + getCertdate() + " SSN: " + getSsn_Number() + " Tel: " + super.getTel() + " Address: " + super.getAddress();
+	} 
+
 	
 
 
