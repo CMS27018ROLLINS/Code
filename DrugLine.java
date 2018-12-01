@@ -71,11 +71,11 @@ public class DrugLine {
 	}
 	
 	public String getInfo() {
-		 return "Prescription ID: 000" + getPrescID() + "  Drug: " + getDrug() + " Qty: " + getQty() + " Dosage: " + getDosage() + " Refills Left: " + getRefillsLeft() + " Times Filled: " + getTimesFilled();
+		 return "Prescription ID: 000" + getPrescID() + "  Drug: " + getDrug().getName() + " Qty: " + getQty() + " Dosage: " + getDosage() + " Refills Left: " + getRefillsLeft() + " Times Filled: " + getTimesFilled();
 	} 
 
 	public String getReport() {
-		 return "         " + getPrescID() + "       " + getDrug() + "                  " + getQty() + "        " + getDosage() + "         " + getRefillsLeft() + "         " + getTimesFilled();
+		 return "         " + getPrescID() + "       " + getDrug().getName() + "                  " + getQty() + "        " + getDosage() + "         " + getRefillsLeft() + "         " + getTimesFilled();
 	} 
 	
 	
