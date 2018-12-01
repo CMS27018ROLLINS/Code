@@ -1,5 +1,4 @@
 Drug1,ChemName1,Manufacture1,Type1,Int,Boolean,Ingredient11,Ingredient12,/,ContraIndication11,ContraIndication12
-
 Vicodin,Acetaminophen,Epocrates,Opiate,5,true,colloidalsilicon dioxide,crospovidone,magnesium stearate,microcrystalline cellulose,/,Naltrexone, Acetaminophen, Hydrocodone
 Synthroid,Levothyroxine,Abbott Labs,Steroid,8,true,Acacia,sugar,corn starch,lactose monohydrate,/,
 Delasone,Pregna,Manufact Inc,Corticosteroids,6,true,Calcium Stearate,Corn Starch,Erythrosine Sodium,Lactose,Mineral Oil,/,Triacetin
@@ -8,11 +7,11 @@ Neurontin,Gabapentin,Drugs Inc,Anticonvulsant,100,false,lactose, cornstarch, tal
 Prinivil,lisinopril,Merck,antihypertensive,5,true,lisinopril,calcium phosphate,mannitol,magnesium stearate,startch,/,Hypersensitivity,Angioedema
 Lipitor,Atorvastatin,Pfizer,statin,100,false,calcium carbonate,candelilla wax,croscarmellose sodium,/,
 Glucpphage,Metformin,Bristol-Myers Squibb,biguanides,100,false,sodium carboxymethyl cellulose,hypromellose,microcrystalline cellulose,/,Acute or chronic metabolic acidosis
-Zofran,Ondansetron,GlaxoSmithKline,Antiemetic,100,flase,aspartame,gelatin,mannitol,methylparaben sodium,propylparaben sodium,/,Clarithromycin, Lotronex
+Zofran,Ondansetron,GlaxoSmithKline,Antiemetic,100,false,aspartame,gelatin,mannitol,methylparaben sodium,propylparaben sodium,/,Clarithromycin, Lotronex
 Motrin,propanoic acid,Johnson&Johnson,NSAID,10,true,carnauba wax,colloidal silicon dioxide,croscarmellose sodium,hypromellose,lactose,/,Aleve
 Ramipril,Tritace,Pfizer,Angiotensin,100,faslse,calcium sulphate dihydrate,pregelatinized starch,sodium bicarbonate,/,
 Co-codamol,Codeine,Acetaminophen,Zentiva,Painkiller,10,true,povidone,talc, stearic acid,magnesium stearate,/,
-Amoxicillin,Carboxylic Acid,Drugs Inc,Antibiotic,100,falsemagnesium stearate,maize starch,gelatin, erythrosin,/,
+Amoxicillin,Carboxylic Acid,Drugs Inc,Antibiotic,100,false,magnesium stearate,maize starch,gelatin, erythrosin,/,
 Naltrexone,Vivitrex,Pfizer,Opiate,3,true,naltrexone hydrochloride,lactose,microcrystalline cellulose,crospovidone,silicon dioxide,magnesium stearate/,Vicodin,
 Hydrocodone,Dihydrocodeinone,Epocrates,Opiate,5,true,colloidal silicon dioxide,crospovidone,magnesium stearate,microcrystalline cellulose,povidone,pregelatinized starch/,Vicodin
 Clarithromycin,Methylerythromycin,Pfizer,Antibiotic,10,true,clarithromycin,lactose monohydrate,magnesium stearate,propylene glycol/,Zofran
