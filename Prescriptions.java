@@ -2,16 +2,24 @@ public class Prescriptions {
 	
 	private int pre_ID;
 	private String date;
-	private String doctor;
+	private Patients patient;
+	private Doctor doctor;
+	private Pharmacists pharmacist;
 
 	public Prescriptions() {
  		pre_ID = 0;
-		doctor = "";		
+ 		date = "";
+ 		patient = null;
+		doctor = null;
+		pharmacist = null; 
 	}
 	
-	public Prescriptions(int u_ID, String u_Doc){
+	public Prescriptions(int u_ID,String u_Date, Patients u_Patient, Doctor u_Doc, Pharmacists u_Phar){
 		pre_ID = u_ID;
-		doctor= u_Doc;
+		date = u_Date;
+		patient = u_Patient;
+		doctor = u_Doc;
+		pharmacist = u_Phar;
 	}
 
 	public int getPre_ID() {
@@ -29,14 +37,36 @@ public class Prescriptions {
 	public void setDate(String u_Date) {
 		date = u_Date;
 	}
+	
+	public Patients getPatient() {
+		return patient;
+	}
 
-	public String getDoctor() {
+	public void setPatient(Patients u_Patient) {
+		patient = u_Patient;
+	}
+
+	public Doctor getDoctor() {
 		return doctor;
 	}
 
-	public void setDoctor(String u_Doc) {
+	public void setDoctor(Doctor u_Doc) {
 		doctor = u_Doc;
 	}
+
+	public Pharmacists getPharmacist() {
+		return pharmacist;
+	}
+
+	public void setPharmacist(Pharmacists u_Pharmacist) {
+		pharmacist = u_Pharmacist;
+	}
+	
+	public String getInfo() {
+		 return "Prescription ID: " + getPre_ID() + " Date: " + getDate() + " Patient: " + getPatient() + " \n Doctor: " + getDoctor() + " Pharmacist: " + getPharmacist() +
+				 " \n----------------------------------------------------" + "\n";
+	} 
+
 	
 	
 
