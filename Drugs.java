@@ -19,13 +19,11 @@ public class Drugs {
 		stipTimes = 0;
 	}
 	
-	public Drugs(String u_Name, String u_chemName, String u_Manu, String u_Type, int u_StipTimes, boolean u_Mon/*, ArrayList<String> u_Ing, ArrayList<String> u_con*/){
+	public Drugs(String u_Name, String u_chemName, String u_Manu, String u_Type, int u_StipTimes, boolean u_Mon){
 		name = u_Name;
 		chem_Name = u_chemName;
-		//ingredients = u_Ing;
 		manufacture = u_Manu;
 		type = u_Type;
-		//contraInd = u_con;
 		stipTimes = u_StipTimes;
 		monitored = u_Mon;
 	}
