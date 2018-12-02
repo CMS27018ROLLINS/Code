@@ -63,8 +63,8 @@ public class Prescriptions {
 	}
 	
 	public String getInfo() {
-		 return "Prescription ID: " + getPre_ID() + " Date: " + getDate() + " Patient: " + getPatient() + " \n Doctor: " + getDoctor() + " Pharmacist: " + getPharmacist() +
-				 " \n----------------------------------------------------" + "\n";
+		 return "Prescription ID: " + getPre_ID() + " Date: " + getDate() + " Patient: " + getPatient() + " \n Doctor: " + 
+	             getDoctor() + " Pharmacist: " + getPharmacist() + " \n----------------------------------------------------" + "\n";
 	} 
 
 	

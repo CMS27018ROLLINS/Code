@@ -17,23 +17,16 @@ public class TransactProcessor implements Information {
 		 return "";
 	 };
 	 
-	 public static HashMap<String, Integer> findDoctor(ArrayList<String> doctor, ArrayList<Drugs> drugs, ArrayList<Prescriptions> Presc){
-		 HashMap<String, Integer> doctors = new HashMap<>();
-		 return doctors;
+	 public static void doctorsReport(String lookup, ArrayList<Drugs>drugsArray){
+		 //print report to file
 	 }
 	 
-	 public static HashMap<String, Integer> findDrugContraIndications(String doc_Name){
-		 HashMap<String, Integer> doctors = new HashMap<>();
-		 return doctors;
+	 public static void drugsContraInd(String lookup, ArrayList<Drugs> drugsArray){
+		 //print report to file 
 	 }
 	 
-	 public static String ContactDoctor(HashMap<String, String> doctorsDB, String docName){
-		 
-		 return "Doctor's info";
-	 }
-	 
-	 public static void Commit(){
-		 
+	 public static void contactDoctor(String lookup, ArrayList<Drugs> drugsArray){
+		//print report to file
 	 }
 	 
 	 /**
@@ -44,6 +37,8 @@ public class TransactProcessor implements Information {
 	 public static ArrayList<Drugs> loadDrugs(File inputFile) {
 		ArrayList<Drugs> arrayDrugs = new ArrayList<>();
 	    try{
+			System.out.println("----------------------------------------");
+			System.out.println("-------- Loading Drugs --------------");
 	    	Scanner file = new Scanner(inputFile);
 	    	file.useDelimiter(",");
 	    	String str = "";
@@ -71,13 +66,12 @@ public class TransactProcessor implements Information {
 			}
 			file.close();
 			return arrayDrugs;
-		}
-		 catch (FileNotFoundException e) {
+		}catch (FileNotFoundException e) {
 		  	System.out.println(e.toString());
 			return arrayDrugs;
 	    }
 	 }
-	 
+
 	 /**
 	  * Method to load the Doctor.txt file into an ArrayList
 	  * @param inputFile File to be read
@@ -86,6 +80,7 @@ public class TransactProcessor implements Information {
 	 public static ArrayList<Doctor> loadDoctor(File inputFile) {
 		ArrayList<Doctor> arrayDoctor = new ArrayList<>();
 	    try{
+			System.out.println("---------- Loading Doctor --------------");
 	    	Scanner file = new Scanner(inputFile);
 	    	file.useDelimiter(",");
 	    	String str = "";
@@ -103,8 +98,7 @@ public class TransactProcessor implements Information {
 			}
 			file.close();
 			return arrayDoctor;
-		}
-		 catch (FileNotFoundException e) {
+		}catch (FileNotFoundException e) {
 		  	System.out.println(e.toString());
 			return arrayDoctor;
 	    }
@@ -118,6 +112,8 @@ public class TransactProcessor implements Information {
 	 public static ArrayList<Patients> loadPatients(File inputFile) {
 		 ArrayList<Patients> arrayPatients = new ArrayList<>();
 		 try{
+			System.out.println("----------------------------------------");
+			System.out.println("-------- Loading Patients --------------");
 		   	Scanner file = new Scanner(inputFile);
 		   	file.useDelimiter(",");
 		   	String str = "";
@@ -135,8 +131,7 @@ public class TransactProcessor implements Information {
 			}
 			file.close();
 			return arrayPatients;
-		}
-		 catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 		  	System.out.println(e.toString());
 		  	return arrayPatients;
 	    }
@@ -150,6 +145,8 @@ public class TransactProcessor implements Information {
 	 public static ArrayList<Pharmacists> loadPharmacists(File inputFile) {
 		 ArrayList<Pharmacists> arrayPharmacists = new ArrayList<>();
 		 try{
+			System.out.println("----------------------------------------");
+			System.out.println("-------- Loading Pharmacists --------------");
 		   	Scanner file = new Scanner(inputFile);
 		   	file.useDelimiter(",");
 		   	String str = "";
@@ -165,10 +162,9 @@ public class TransactProcessor implements Information {
 					i++;
 				}
 			}
-				file.close();
-				return arrayPharmacists;
-		}
-		 	catch (FileNotFoundException e) {
+			file.close();
+			return arrayPharmacists;
+		}catch (FileNotFoundException e) {
 		  	System.out.println(e.toString());
 		  	return arrayPharmacists;
 	    }
@@ -182,6 +178,8 @@ public class TransactProcessor implements Information {
 	 public static ArrayList<Prescriptions> loadPrescriptions(File inputFile) {
 		 ArrayList<Prescriptions> arrayPrescriptions = new ArrayList<>();
 		 try{
+			System.out.println("---------------------------------------------");
+			System.out.println("-------- Loading Prescriptions --------------");
 		   	Scanner file = new Scanner(inputFile);
 		   	file.useDelimiter(",");
 		   	String str = "";
@@ -214,6 +212,9 @@ public class TransactProcessor implements Information {
 	 public static ArrayList<DrugLine> loadDrugLine(File inputFile) {
 		 ArrayList<DrugLine> arrayDrugLine = new ArrayList<>();
 		 try{
+			System.out.println("---------------------------------------------");
+			System.out.println("-------- Loading Drug Line --------------");
+			System.out.println("---------------------------------------------");
 		   	Scanner file = new Scanner(inputFile);
 		   	file.useDelimiter(",");
 		   	String str = "";
@@ -237,48 +238,102 @@ public class TransactProcessor implements Information {
 		  	return arrayDrugLine;
 	    }
 	 }
-
-	 public static void processTransactions(){
-		File doctor = new File("Doctor.txt");
-		File patients = new File("Patients.txt");
-		File pharmacists = new File("Pharmacists.txt");
-		File drugs = new File("Drugs.txt");
-		File prescriptions = new File("Prescriptions.txt");
-		File drugline = new File("DrugLine.txt");
-				
-		ArrayList<Doctor> d = new ArrayList<>();
-		ArrayList<Patients> p = new ArrayList<>();
-		ArrayList<Pharmacists> p1 = new ArrayList<>();
-		ArrayList<Drugs> dr = new ArrayList<>();
-		ArrayList<Prescriptions> pr = new ArrayList<>();
-		ArrayList<DrugLine> dl = new ArrayList<>();
-		
-		System.out.println("---------- Loading Doctor --------------");
-		d = loadDoctor(doctor);
-		System.out.println("----------------------------------------");
-		System.out.println("-------- Loading Patients --------------");
-		p = loadPatients(patients);
-		System.out.println("----------------------------------------");
-		System.out.println("-------- Loading Pharmacists --------------");
-		p1 = loadPharmacists(pharmacists);
-		System.out.println("----------------------------------------");
-		System.out.println("-------- Loading Drugs --------------");
-		dr = loadDrugs(drugs);
-		System.out.println("-------- Drugs Objects Contents --------------");
-		System.out.println(dr.get(0).getIngredients(0));
-		System.out.println(dr.get(0).getIngredients(1));
-		System.out.println(dr.get(1).getIngredients(0));
-		System.out.println(dr.get(1).getIngredients(1));
-		System.out.println(dr.get(2).getIngredients(0));
-		System.out.println(dr.get(2).getIngredients(1));
-		System.out.println("---------------------------------------------");
-		System.out.println("-------- Loading Prescriptions --------------");
-		System.out.println("---------------------------------------------");
-		pr = loadPrescriptions(prescriptions);
-		System.out.println("---------------------------------------------");
-		System.out.println("-------- Loading Drug Line --------------");
-		System.out.println("---------------------------------------------");
-		dl = loadDrugLine(drugline);
+	 
+	 /**
+	  * This method load txt files into arrays of object types: 
+	  * Doctor, Patients, Pharmacists, Drugs, Prescriptions, Drugline
+	  */
+	 public static void loadFiles(){
+		 
+			File doctor = new File("Doctor.txt");
+			File patients = new File("Patients.txt");
+			File pharmacists = new File("Pharmacists.txt");
+			File drugs = new File("Drugs.txt");
+			File prescriptions = new File("Prescriptions.txt");
+			File drugline = new File("DrugLine.txt");
+			File transactions = new File("Transactions.txt");
+					
+			ArrayList<Doctor> doctorArray = new ArrayList<>();
+			ArrayList<Patients> patientsArray = new ArrayList<>();
+			ArrayList<Pharmacists> pharmacistsArray = new ArrayList<>();
+			ArrayList<Drugs> drugsArray = new ArrayList<>();
+			ArrayList<Prescriptions> prescriptionsArray = new ArrayList<>();
+			ArrayList<DrugLine> druglineArray = new ArrayList<>();
+			
+			doctorArray = loadDoctor(doctor);
+			patientsArray = loadPatients(patients);
+			pharmacistsArray = loadPharmacists(pharmacists);
+			drugsArray = loadDrugs(drugs);
+			prescriptionsArray = loadPrescriptions(prescriptions);
+			druglineArray = loadDrugLine(drugline);
+			processTransactions(doctorArray, patientsArray, pharmacistsArray, drugsArray, prescriptionsArray, druglineArray, transactions);
+			prescriptionsReport(prescriptionsArray, druglineArray);
+		 
+	 }
+	 
+	 public static void processTransactions(ArrayList<Doctor> doctorArray, ArrayList<Patients> patientsArray, 
+			                                ArrayList<Pharmacists> pharmacistsArray, ArrayList<Drugs> drugsArray, 
+			                                ArrayList<Prescriptions> prescriptionsArray, ArrayList<DrugLine>druglineArray, File inputFile){
+		 
+		 try{
+			System.out.println("---------------------------------------------");
+			System.out.println("-------- Loading Transactions  --------------");
+			System.out.println("---------------------------------------------");
+		   	Scanner file = new Scanner(inputFile);
+		   	file.useDelimiter(",");
+		   	String str = "";
+			int count = 0;
+			int i = 0;
+			String line[] = new String[12];
+			String trans = "";
+			String lookup = "";
+			while(file.hasNextLine()){
+				str = file.nextLine();
+				if ( !str.equals("") ){
+					Scanner txt = new Scanner(str);				
+					txt.useDelimiter(",");
+					trans = txt.next();
+					switch (trans){
+						case "FP":
+							for (i = 0; i < 12; i++){
+								if (!txt.hasNext()){
+									break;
+								}
+								line[i] = txt.next();
+							}
+							if (i > 2){
+								//create new prescription
+							}else{
+								//lookup prescription and update
+							}
+							break;
+						case "FD": //Find doctors who prescribed a determined drug more then stipulated times
+							lookup = txt.next();
+							doctorsReport(lookup, drugsArray);
+							break;
+						case "FDC":
+							lookup = txt.next();
+							drugsContraInd(lookup, drugsArray);							
+							break;
+						case "CD":
+							lookup = txt.next();
+							contactDoctor(lookup, drugsArray);
+							break;
+						default:
+							break;
+					}
+				}
+			}
+			file.close();
+		}
+		 catch (FileNotFoundException e) {
+		  	System.out.println(e.toString());
+	    }
+	 
+	 }
+	 
+	 public static void prescriptionsReport(ArrayList<Prescriptions> pr, ArrayList<DrugLine> dl){
+		 
 		System.out.println("-----------------------------------------------------------------------------------");
 		System.out.println("----------------------------- Prescriptions Report --------------------------------");
 		System.out.println("-----------------------------------------------------------------------------------");
@@ -317,7 +372,7 @@ public class TransactProcessor implements Information {
 //-- Main ---------------------------------------------------------------------	
 	public static void main(String[] args){
 		
-		processTransactions();
+		loadFiles();
 		
 		
 		
