@@ -3,5 +3,5 @@ FDC,Zofran
 FP,11/20/18,Alicia Keys,Gregory House,Paul Brewster,Hydrocodone,30,2/day,0,Lipitor,90,1/day,3
 FP,12/03/18,John Green,Paul Melendez,Anderson Tiger,Lotronex,14,2/day,0
 CD,Paul Melendez
-FP,11/23/18,Alicia Keys,Eric Foreman,Julie Anderson, 
+FP,11/23/18,Alicia Keys,Eric Foreman,Julie Anderson,Clarithromycin,20,1/day,0
 FDC, Naltrexone
