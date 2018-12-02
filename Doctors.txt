@@ -1,4 +1,10 @@
 Gregory House,453 Nw9th,56746755,FamilyDoctor
-
+Stephanie Murphy, 55762 Brantley Hill Dt,4566769977, Chiropractor
 Eric Foreman,767 EastEnd,7580483746,OBGYN
-Paul Melendez, 1000 Holt Ave,11213554,Oncologist
+Emily Southerland,888 Pink Tulip Ct,4074442433,OBGYN
+Paul Melendez,1000 Holt Ave,11213554,Oncologist
+Willy Wonka,311 Yellow Brick Rd,5433347575,Pediatrist
+Steve Jobs,2334 Castle Dr,56799994732,Allergist
+Malinda Waters,322 Center Hill Ct,7657776767,Pediatrician
+Robin McNeil,4498 Castell Rd,8987778655,FamilyDoctor
+Claire Lake,900 West Lake Rd,5563633388,Pediatrician
