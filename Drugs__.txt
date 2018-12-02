@@ -1,0 +1,5 @@
+Drug1,ChemName1,Manufacture1,Type1,4,true,Ingredient11,Ingredient12,/,ContraIndication11,ContraIndication12
+Drug2,ChemName2,Manufacture2,Type2,10,true,Ingredient21,Ingredient22,/,ContraIndication21,ContraIndication22
+Drug3,ChemName3,Manufacture3,Type3,20,false,Ingredient31,Ingredient32,/,ContraIndication31,ContraIndication32
+Drug4,ChemName4,Manufacture4,Type4,5,false,Ingredient41,Ingredient42,/,ContraIndication41,ContraIndication42
+Drug5,ChemName5,Manufacture5,Type5,8,true,Ingredient51,Ingredient52,/,ContraIndication51,ContraIndication52

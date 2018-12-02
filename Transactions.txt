@@ -1,7 +1,16 @@
 FD,Clarithromycin
 FDC,Zofran
-FP,11/20/18,Alicia Keys,Gregory House,Paul Brewster,Hydrocodone,30,2/day,0,Lipitor,90,1/day,3
-FP,12/03/18,John Green,Paul Melendez,Anderson Tiger,Lotronex,14,2/day,0
+FP,11/20/18,Alicia Keys,Gregory House,Paul Brewster,Hydrocodone,3,2/day,Lipitor,5,1/day
+FP,1,Amoxicilin
+FP,12/03/18,John Green,Paul Melendez,Anderson Tiger,Lotronex,4,2/day
 CD,Paul Melendez
-FP,11/23/18,Alicia Keys,Eric Foreman,Julie Anderson,Clarithromycin,20,1/day,0
+FP,1,Amoxicilin
+FP,11/23/18,Alicia Keys,Eric Foreman,Julie Anderson,Clarithromycin,2,1/day
+FP,2,Ibuprofen
+FP,2,Morphine
+FP,11,Morphine
 FDC, Naltrexone
+FP,2,Morphine
+FP,2,Morphine
+FP,12/01/18,Nicholas Green,Eric Foreman,Julie Anderson,Clarithromycin,20,1/day,Lipitor,3,1/day,Hydrocodone,1,2/day
+FP,12/01/18,Nicholas Yellow,Eric Foreman,Julie Anderson,Aarithromycin,20,1/day,Lipitor,4,1/day,Hydrocodone,2,2/day
