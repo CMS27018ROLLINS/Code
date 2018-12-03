@@ -34,6 +34,11 @@ public class Patients extends People {
 		 return "Name: " + super.getName() + " Provider: " + getInsProvider() + " SSN: " + getssn_Number() + " Tel: " + super.getTel() + " Address: " + super.getAddress();
 	} 
 
+	public String getInfoReport() {
+		 return "  " + super.align(super.getName(), 35) + super.align(getInsProvider(), 25) + super.align(getssn_Number(), 16) + super.align(super.getTel(), 16) + 
+				       super.align(super.getAddress(),30);
+	} 
+
 
 
 }

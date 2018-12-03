@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 import java.io.*;
 
@@ -272,6 +271,7 @@ public class TransactProcessor {
 			prescriptionsReport("Prescriptions Before.txt", prescriptionsArray, druglineArray);
 			processTransactions(doctorArray, patientsArray, pharmacistsArray, drugsArray, prescriptionsArray, druglineArray, transactions);
 			prescriptionsReport("Prescriptions After.txt",prescriptionsArray, druglineArray);
+			printUpdatedFiles(doctorArray, patientsArray, pharmacistsArray, drugsArray);
 		 
 	 }
 //END LOADING FILES METHODS ********************************************************************************************************	
@@ -381,8 +381,6 @@ public class TransactProcessor {
 		   	Scanner file = new Scanner(inputFile);
 		   	file.useDelimiter(",");
 		   	String str = "";
-			int count = 0;
-			int i = 0;
 			ArrayList <String> line = new ArrayList<>();
 			String trans = "";
 			String lookup = "";
@@ -428,6 +426,7 @@ public class TransactProcessor {
 						default:
 							break;
 					}
+					txt.close();
 				}
 			}
 			file.close();
@@ -741,6 +740,59 @@ public class TransactProcessor {
 	    	  System.out.println(e.toString());
 			}
 	 }
+	 
+	 public static void printUpdatedFiles(ArrayList<Doctor> doctorArray, ArrayList<Patients> patientsArray, ArrayList<Pharmacists> pharmacistsArray, 
+			                              ArrayList<Drugs> drugsArray){
+
+		 //Printing Doctor Array
+		 try{
+				FileOutputStream outputFile = new FileOutputStream("updatedDoctor.txt");
+				PrintWriter outFile = new PrintWriter(outputFile);
+				outFile.println("********************************************************************************************************");
+				outFile.println("                               >>>>>     UPDATED DOCTOR FILE     <<<<<                                  ");
+				outFile.println("********************************************************************************************************");
+				outFile.println("");
+				if (!doctorArray.isEmpty()){
+					outFile.println("-----------------------------------------------------------------------------------------------------");
+					outFile.println("    Name                  |       Specialization     |     Phone     |           Address           | ");
+					outFile.println("-----------------------------------------------------------------------------------------------------");
+				}
+				for (int i = 0; i < doctorArray.size(); i++){
+					outFile.println(doctorArray.get(i).getInfoReport());
+				}
+				outFile.flush();
+				outFile.close();
+			}
+			catch (FileNotFoundException e) {
+	    	  System.out.println(e.toString());
+			}
+		 //--------------------------------------------------------------
+		 //Printing Patients Array
+		 try{
+				FileOutputStream outputFile = new FileOutputStream("updatedPatients.txt");
+				PrintWriter outFile = new PrintWriter(outputFile);
+				outFile.println("***************************************************************************************************************************");
+				outFile.println("                                       >>>>>     UPDATED PATIENTS FILE     <<<<<                                           ");
+				outFile.println("***************************************************************************************************************************");
+				outFile.println("");
+				if (!patientsArray.isEmpty()){
+					outFile.println("--------------------------------------------------------------------------------------------------------------------------");
+					outFile.println("    Name                  |       Insurance Provider      |      SSN      |     Phone     |           Address           | ");
+					outFile.println("--------------------------------------------------------------------------------------------------------------------------");
+				}
+				for (int i = 0; i < patientsArray.size(); i++){
+					outFile.println(patientsArray.get(i).getInfoReport());
+				}
+				outFile.flush();
+				outFile.close();
+			}
+			catch (FileNotFoundException e) {
+	    	  System.out.println(e.toString());
+			}
+		 //--------------------------------------------------------------
+		 
+	 }
+
 
 	 
 // END REPORTS ************************************************************************************************************************************	 	

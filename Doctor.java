@@ -22,8 +22,13 @@ public class Doctor extends People {
 	}
 	
 	public String getInfo() {
-		 return "\n Name: " + super.getName() + "\n Specilization: " + getSpec() + "\n Tel: " + super.getTel() + "\n Address: " + super.getAddress();
+		 return "\n Name: " + super.getName() + "\n Specialization: " + getSpec() + "\n Tel: " + super.getTel() + "\n Address: " + super.getAddress();
 	} 
+	
+	public String getInfoReport() {
+		 return "  " + super.align(super.getName(), 27) + super.align(getSpec(), 29) + super.align(super.getTel(), 18) + super.align(super.getAddress(),20);
+	} 
+	
 
 
 }

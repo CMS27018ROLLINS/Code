@@ -40,5 +40,22 @@ public abstract class People {
 		tel = u_tel;
 	}
 	
+	/**
+	 * Method to add blank spaces to a string in order to
+	 * align columns when printing out to a file or screen
+	 * @param s String to be printed
+	 * @param col quantity of columns to be printed 
+	 * @return the string + blank spaces
+	 */
+	public String align(String s, int col){
+		int newCol = col - s.length();
+		String newS = s;
+		for (int i = 0; i < newCol; i++){
+			newS += " ";
+		}
+		return newS;
+	}
+
+	
 
 }
