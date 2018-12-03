@@ -14,8 +14,8 @@ public class TransactProcessor {
 	 }
 	 
 	 public static String prescriptionFilledSuccessfully(){
-		 return "";
-	 };
+		 return "Prescription Filled Successfully";
+	 }
 	 
 	public static String align(String s, int col){
 		int newCol = col - s.length();
@@ -35,8 +35,7 @@ public class TransactProcessor {
 	 public static ArrayList<Drugs> loadDrugs(File inputFile) {
 		ArrayList<Drugs> arrayDrugs = new ArrayList<>();
 	    try{
-			System.out.println("----------------------------------------");
-			System.out.println("-------- Loading Drugs --------------");
+			System.out.println("-------- Loading Drugs ------------------");
 	    	Scanner file = new Scanner(inputFile);
 	    	file.useDelimiter(",");
 	    	String str = "";
@@ -57,8 +56,8 @@ public class TransactProcessor {
 						d.addContraInd(txt.next());
 					}
 					arrayDrugs.add(i, d);
-					d.getInfo();
-					System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+//					d.getInfo();
+//					System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 					i++;
 				}
 			}
@@ -79,7 +78,7 @@ public class TransactProcessor {
 	 public static ArrayList<Doctor> loadDoctor(File inputFile) {
 		ArrayList<Doctor> arrayDoctor = new ArrayList<>();
 	    try{
-			System.out.println("---------- Loading Doctor --------------");
+			System.out.println("-------- Loading Doctor -----------------");
 	    	Scanner file = new Scanner(inputFile);
 	    	file.useDelimiter(",");
 	    	String str = "";
@@ -90,7 +89,7 @@ public class TransactProcessor {
 					Scanner txt = new Scanner(str);				
 					txt.useDelimiter(",");
 					Doctor d = new Doctor(txt.next(), txt.next(), txt.next(), txt.next());
-					System.out.println(d.getInfo());
+//					System.out.println(d.getInfo());
 					arrayDoctor.add(i, d);
 					i++;
 				}
@@ -113,8 +112,7 @@ public class TransactProcessor {
 	 public static ArrayList<Patients> loadPatients(File inputFile) {
 		 ArrayList<Patients> arrayPatients = new ArrayList<>();
 		 try{
-			System.out.println("----------------------------------------");
-			System.out.println("-------- Loading Patients --------------");
+			System.out.println("-------- Loading Patients ---------------");
 		   	Scanner file = new Scanner(inputFile);
 		   	file.useDelimiter(",");
 		   	String str = "";
@@ -125,7 +123,7 @@ public class TransactProcessor {
 					Scanner txt = new Scanner(str);				
 					txt.useDelimiter(",");
 					Patients p = new Patients(txt.next(), txt.next(), txt.next(), txt.next(), txt.next());
-					System.out.println(p.getInfo());
+//					System.out.println(p.getInfo());
 					arrayPatients.add(i, p);
 					i++;
 				}
@@ -148,8 +146,7 @@ public class TransactProcessor {
 	 public static ArrayList<Pharmacists> loadPharmacists(File inputFile) {
 		 ArrayList<Pharmacists> arrayPharmacists = new ArrayList<>();
 		 try{
-			System.out.println("----------------------------------------");
-			System.out.println("-------- Loading Pharmacists --------------");
+			System.out.println("-------- Loading Pharmacists ------------");
 		   	Scanner file = new Scanner(inputFile);
 		   	file.useDelimiter(",");
 		   	String str = "";
@@ -160,7 +157,7 @@ public class TransactProcessor {
 					Scanner txt = new Scanner(str);				
 					txt.useDelimiter(",");
 					Pharmacists p = new Pharmacists(txt.next(), txt.next(), txt.next(), txt.next(), txt.next());
-					System.out.println(p.getInfo());
+//					System.out.println(p.getInfo());
 					arrayPharmacists.add(i, p);
 					i++;
 				}
@@ -183,8 +180,7 @@ public class TransactProcessor {
 	 public static ArrayList<Prescriptions> loadPrescriptions(File inputFile) {
 		 ArrayList<Prescriptions> arrayPrescriptions = new ArrayList<>();
 		 try{
-			System.out.println("---------------------------------------------");
-			System.out.println("-------- Loading Prescriptions --------------");
+			System.out.println("-------- Loading Prescriptions ----------");
 		   	Scanner file = new Scanner(inputFile);
 		   	file.useDelimiter(",");
 		   	String str = "";
@@ -195,7 +191,7 @@ public class TransactProcessor {
 					Scanner txt = new Scanner(str);				
 					txt.useDelimiter(",");
 					Prescriptions p = new Prescriptions(txt.nextInt(), txt.next(), txt.next(), txt.next(), txt.next());
-					System.out.println(p.getInfo());
+//					System.out.println(p.getInfo());
 					arrayPrescriptions.add(i, p);
 					i++;
 				}
@@ -219,9 +215,7 @@ public class TransactProcessor {
 	 public static ArrayList<DrugLine> loadDrugLine(File inputFile) {
 		 ArrayList<DrugLine> arrayDrugLine = new ArrayList<>();
 		 try{
-			System.out.println("---------------------------------------------");
 			System.out.println("-------- Loading Drug Line --------------");
-			System.out.println("---------------------------------------------");
 		   	Scanner file = new Scanner(inputFile);
 		   	file.useDelimiter(",");
 		   	String str = "";
@@ -232,7 +226,7 @@ public class TransactProcessor {
 					Scanner txt = new Scanner(str);				
 					txt.useDelimiter(",");
 					DrugLine dl = new DrugLine(txt.nextInt(), txt.next(), txt.nextInt(), txt.next(), txt.nextInt(), txt.nextInt());
-					System.out.println(dl.getInfo());
+//					System.out.println(dl.getInfo());
 					arrayDrugLine.add(i, dl);
 					i++;
 				}
@@ -275,14 +269,14 @@ public class TransactProcessor {
 			prescriptionsArray = loadPrescriptions(prescriptions);
 			druglineArray = loadDrugLine(drugline);
 			
-			prescriptionsReport(prescriptionsArray, druglineArray);
+			prescriptionsReport("Prescriptions Before.txt", prescriptionsArray, druglineArray);
 			processTransactions(doctorArray, patientsArray, pharmacistsArray, drugsArray, prescriptionsArray, druglineArray, transactions);
-			prescriptionsReport(prescriptionsArray, druglineArray);
+			prescriptionsReport("Prescriptions After.txt",prescriptionsArray, druglineArray);
 		 
 	 }
 //END LOADING FILES METHODS ********************************************************************************************************	
 	 
-//PROCESS FILES METHODS BEGIN ******************************************************************************************	
+//PROCESS FILES METHODS BEGIN ******************************************************************************************************	
 	 public static void updatePrescriptions(String lookupID, String lkpDrug, ArrayList<DrugLine> dl){
 		 
 		 boolean foundID = false;
@@ -293,34 +287,46 @@ public class TransactProcessor {
 				break;				
 			}
 		 }
-		 if (foundID){
-			while (dl.get(i).getPrescID() == Integer.parseInt(lookupID)){
-				if (dl.get(i).getDrug().equals(lkpDrug)){
-					System.out.println("*********************************************************************************************************************");
-					System.out.println("Current Status:");
-					System.out.println(dl.get(i).getInfo());
-					if (dl.get(i).getRefillsLeft() > 0){
-						dl.get(i).setRefillsLeft(dl.get(i).getRefillsLeft() - 1);
-						dl.get(i).setTimesFilled(dl.get(i).getTimesFilled() + 1);
-						System.out.println("Refilled:");
-						System.out.println(dl.get(i).getInfo());
-						System.out.println("*********************************************************************************************************************");
-						System.out.println("");
-					}else{
-						System.out.println(unableToFillPrescription() + " -> Exceeded quantity");
-						System.out.println("*********************************************************************************************************************");
-						System.out.println("");
+		 try{
+				PrintWriter outFile = new PrintWriter(new BufferedWriter(new FileWriter("TransactionsLog.txt", true)));
+				outFile.println("*********************************************************************************************************************");
+				outFile.println("                                            Transactions Log                                                         ");
+				outFile.println("*********************************************************************************************************************");
+				outFile.println("");
+				if (foundID){
+					while (dl.get(i).getPrescID() == Integer.parseInt(lookupID)){
+						if (dl.get(i).getDrug().equals(lkpDrug)){
+							outFile.println("*********************************************************************************************************************");
+							outFile.println("Current Status:");
+							outFile.println(dl.get(i).getInfo());
+							if (dl.get(i).getRefillsLeft() > 0){
+								dl.get(i).setRefillsLeft(dl.get(i).getRefillsLeft() - 1);
+								dl.get(i).setTimesFilled(dl.get(i).getTimesFilled() + 1);
+								outFile.println("Refilled:");
+								outFile.println(dl.get(i).getInfo());
+								outFile.println(prescriptionFilledSuccessfully()+ " >>>>>");
+								outFile.println("*********************************************************************************************************************");
+							}else{
+								outFile.println(unableToFillPrescription() + " -> Exceeded quantity");
+								outFile.println("*********************************************************************************************************************");
+								outFile.println("");
+							}
+						}
+						i++;
 					}
-				}
-				i++;
-			}
-		 }else{
-			 System.out.println("***********************************************************************************************");
-			 System.out.println("Current Status:");
-			 System.out.println(unableToFillPrescription() + " -> Prescription ID: "+ dl.get(0).fillZeros(Integer.parseInt(lookupID)) + " not found!!! ");
-			 System.out.println("***********************************************************************************************");
-			 System.out.println("");
-		 }
+				 }else{
+					 outFile.println("***********************************************************************************************");
+					 outFile.println("Current Status:");
+					 outFile.println(unableToFillPrescription() + " -> Prescription ID: "+ dl.get(0).fillZeros(Integer.parseInt(lookupID)) + " not found!!! ");
+					 outFile.println("***********************************************************************************************");
+					 outFile.println("");
+				 }
+				outFile.flush();
+				outFile.close();
+		 	   } catch (IOException e){
+				     System.out.println(e.toString());
+		 	   } 
+
 	 }
 
 //PROCESS Files page......................................................................................
@@ -371,9 +377,7 @@ public class TransactProcessor {
 			                                ArrayList<Prescriptions> prescriptionsArray, ArrayList<DrugLine>druglineArray, File inputFile){
 		 
 		 try{
-			System.out.println("---------------------------------------------");
-			System.out.println("-------- Loading Transactions  --------------");
-			System.out.println("---------------------------------------------");
+			System.out.println("-------- Loading Transactions  ----------");
 		   	Scanner file = new Scanner(inputFile);
 		   	file.useDelimiter(",");
 		   	String str = "";
@@ -575,9 +579,7 @@ public class TransactProcessor {
 			 int iDoctor = 0;
 			 while ( i < dl.size() ){
 				 prescId = dl.get(i).getPrescID();
-				 System.out.println("Presc ID Prescription: " + presc.get(iPresc).getPre_ID());
 				 while (dl.get(i).getPrescID() == prescId){
-					 System.out.println("Presc ID DL: " + dl.get(i).getPrescID());
 					 if (drugLookup.equals(dl.get(i).getDrug())){
 						 
 						 iDoctor = lookupArrayList(presc.get(iPresc).getDoctor(),doctorList);
@@ -598,7 +600,11 @@ public class TransactProcessor {
 				 }
 				 iPresc++;
 			 }
-			 printReportToFile("Drug Report: ","Doctor Name", drugLookup, doctorList, drugQty);
+			 if (!doctorList.isEmpty()){
+				 printReportToFile("Drug Report: ","Doctor Name", drugLookup, doctorList, drugQty);
+			 }else{
+				 printReportToFile("Not prescribed above stipulated times","", drugLookup, doctorList, drugQty);
+			 }
      }
 
 //REPORT Page..................................................................................
@@ -664,37 +670,49 @@ public class TransactProcessor {
 
 //REPORT Page..................................................................................
 
-	 public static void prescriptionsReport(ArrayList<Prescriptions> pr, ArrayList<DrugLine> dl){
+	 public static void prescriptionsReport(String fileName, ArrayList<Prescriptions> pr, ArrayList<DrugLine> dl){
 		 
-		System.out.println("-----------------------------------------------------------------------------------");
-		System.out.println("----------------------------- Prescriptions Report --------------------------------");
-		System.out.println("-----------------------------------------------------------------------------------");
-		int id = 0;
-		int bof = 0;
-		for (int i = 0; i < pr.size(); i++){
-			System.out.println("--------------------------------------------------------------------------------------------------------");
-			System.out.println("Prescription: " + pr.get(i).fillZeros(pr.get(i).getPre_ID()) + "  Patient: " + pr.get(i).getPatient() +
-					           "     Date: " + pr.get(i).getDate());
-			System.out.println("Doctor: " + pr.get(i).getDoctor() + "    Pharmacist: " + pr.get(i).getPharmacist());
-			System.out.println("--------------------------------------------------------------------------------------------------------");
-			System.out.println("    ----------------------------------------------------------------------------------------------------");
-			System.out.println("    |   ID   | Drug Name                               |   Qty   | Dosage | Ref Left | Times Ref |");
-			System.out.println("    ----------------------------------------------------------------------------------------------------");
-			for (bof = 0; bof < dl.size(); bof++){
-				if (dl.get(bof).getPrescID() == pr.get(i).getPre_ID()){
-					break;
+		 try{
+				FileOutputStream outputFile = new FileOutputStream(fileName);
+				PrintWriter outFile = new PrintWriter(outputFile);
+				outFile.println("--------------------------------------------------------------------------------------------------------");
+				outFile.println("                                     Prescriptions Report                                               ");
+				outFile.println("--------------------------------------------------------------------------------------------------------");
+				outFile.println("");
+				int id = 0;
+				int bof = 0;
+				for (int i = 0; i < pr.size(); i++){
+					outFile.println("********************************************************************************************************");
+					outFile.println("Prescription: " + pr.get(i).fillZeros(pr.get(i).getPre_ID()) + "  Patient: " + pr.get(i).getPatient() +
+							           "     Date: " + pr.get(i).getDate());
+					outFile.println("Doctor: " + pr.get(i).getDoctor() + "    Pharmacist: " + pr.get(i).getPharmacist());
+					outFile.println("--------------------------------------------------------------------------------------------------------");
+					outFile.println("    ----------------------------------------------------------------------------------------------------");
+					outFile.println("    |   ID   | Drug Name                               |   Qty   | Dosage | Ref Left | Times Ref |");
+					outFile.println("    ----------------------------------------------------------------------------------------------------");
+					for (bof = 0; bof < dl.size(); bof++){
+						if (dl.get(bof).getPrescID() == pr.get(i).getPre_ID()){
+							break;
+						}
+					}
+					for (int j = bof; j < dl.size(); j++){
+						if (dl.get(j).getPrescID() != pr.get(i).getPre_ID()){
+							break;
+						}else{
+							outFile.println(dl.get(j).getReport());
+						}
+					}
+					outFile.println("********************************************************************************************************");
+					outFile.println("");
 				}
+				outFile.flush();
+				outFile.close();
+
+		 }catch (FileNotFoundException e) {
+	    	  System.out.println(e.toString());
 			}
-			for (int j = bof; j < dl.size(); j++){
-				if (dl.get(j).getPrescID() != pr.get(i).getPre_ID()){
-					break;
-				}else{
-					System.out.println(dl.get(j).getReport());
-				}
-			}
-			System.out.println("--------------------------------------------------------------------------------------------------------");
-			System.out.println("");
-		}
+
+		 
 	 }
 
 //REPORT Page..................................................................................
@@ -704,13 +722,15 @@ public class TransactProcessor {
 		 try{
 				FileOutputStream outputFile = new FileOutputStream(outFileName);
 				PrintWriter outFile = new PrintWriter(outputFile);
-				outFile.println("**********************************************");
+				outFile.println("***********************************************************");
 				outFile.println("  " + title + ": " + outFileName );
-				outFile.println("**********************************************");
+				outFile.println("***********************************************************");
 				outFile.println("");
-				outFile.println("-----------------------------------------------");
-				outFile.println("          " + align(col, 25) +"| Quantity ");
-				outFile.println("-----------------------------------------------");
+				if (!s.isEmpty()){
+					outFile.println("-----------------------------------------------");
+					outFile.println("          " + align(col, 25) +"| Quantity ");
+					outFile.println("-----------------------------------------------");
+				}
 				for (int i = 0; i < s.size(); i++){
 					outFile.println("  " + align(s.get(i), 38) + align(Integer.toString(qty.get(i)),5));
 				}
