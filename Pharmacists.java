@@ -1,8 +1,12 @@
-public class Pharmacists extends People /*implements Information*/{
+//Group Project
+//May, Felipe, May
+
+public class Pharmacists extends People {
 
 	private String certdate; 
 	private String ssn_Number;
 	
+	// Constructors --------------------------------------------------------
 	public Pharmacists() {
 		super();
 		certdate = "";
@@ -14,7 +18,8 @@ public class Pharmacists extends People /*implements Information*/{
 		certdate = u_cert;
 		ssn_Number = u_SSN;
 	}
-
+	
+	// Getters & Setters -----------------------------------------------------
 	public String getCertdate() {
 		return certdate;
 	}
@@ -22,7 +27,7 @@ public class Pharmacists extends People /*implements Information*/{
 	public void setCertdate(String u_Certdate) {
 		certdate = u_Certdate;
 	}
-
+	//-------------------------------------
 	public String getSsn_Number() {
 		return ssn_Number;
 	}
@@ -30,7 +35,14 @@ public class Pharmacists extends People /*implements Information*/{
 	public void setSsn_Number(String u_SSN) {
 		ssn_Number = u_SSN;
 	}
-	
-
+	//-------------------------------------
+	public String getInfo() {
+		 return "Name: " + super.getName() + " Cert Date: " + getCertdate() + " SSN: " + getSsn_Number() + " Tel: " + super.getTel() + " Address: " + super.getAddress();
+	} 
+	//--------------------------------------------------------------------------
+	public String getInfoReport() {
+		 return "  " + super.align(super.getName(), 35) + super.align(getCertdate(), 25) + super.align(getSsn_Number(), 17) + super.align(super.getTel(), 19) + 
+			       super.align(super.getAddress(),30);
+	} 
 
 }
