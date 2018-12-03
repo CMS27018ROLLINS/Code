@@ -22,7 +22,7 @@ public class Doctor extends People {
 	}
 	
 	public String getInfo() {
-		 return "Name: " + super.getName() + " Specilization: " + getSpec() + " Tel: " + super.getTel() + " Address: " + super.getAddress();
+		 return "\n Name: " + super.getName() + "\n Specilization: " + getSpec() + "\n Tel: " + super.getTel() + "\n Address: " + super.getAddress();
 	} 
 
 

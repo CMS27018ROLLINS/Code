@@ -9,8 +9,21 @@ FP,11/23/18,Alicia Keys,Eric Foreman,Julie Anderson,Clarithromycin,2,1/day
 FP,2,Ibuprofen
 FP,2,Morphine
 FP,11,Morphine
-FDC, Naltrexone
+FDC,Vicodin
 FP,2,Morphine
 FP,2,Morphine
-FP,12/01/18,Nicholas Green,Eric Foreman,Julie Anderson,Clarithromycin,20,1/day,Lipitor,3,1/day,Hydrocodone,1,2/day
-FP,12/01/18,Nicholas Yellow,Eric Foreman,Julie Anderson,Aarithromycin,20,1/day,Lipitor,4,1/day,Hydrocodone,2,2/day
+CD,Eric Foreman
+FP,12/01/18,Nicholas Green,Eric Foreman,Julie Anderson,Levothyroxine,20,1/day,Lipitor,3,1/day,Hydrocodone,1,2/day
+FP,12/01/18,Nicholas Yellow,Eric Foreman,Julie Anderson,Pregna,20,1/day,Lipitor,4,1/day,Hydrocodone,2,2/day
+FP,12/02/18,Nicholas Yellow,Eric Foreman,Julie Anderson,Vivitrex,3,1/day,Lipitor,4,1/day,Hydrocodone,2,2/day
+FP,12/03/18,Nicholas Yellow,Eric Foreman,Julie Anderson,Synthroid,20,1/day,Vivitrex,2,1/day,Hydrocodone,2,2/day
+FP,12/04/18,Nicholas Yellow,Eric Foreman,Julie Anderson,Vicodin,20,1/day,Lipitor,4,1/day,Hydrocodone,2,2/day
+FP,12/04/18,Nicholas Yellow,Eric Foreman,Julie Anderson,Vicodin,20,1/day,Lipitor,4,1/day,Hydrocodone,2,2/day
+FP,12/04/18,Nicholas Yellow,Eric Foreman,Julie Anderson,Vicodin,20,1/day,Lipitor,4,1/day,Hydrocodone,2,2/day
+FP,12/04/18,Nicholas Yellow,Eric Foreman,Julie Anderson,Vicodin,20,1/day,Lipitor,4,1/day,Hydrocodone,2,2/day
+FP,12/04/18,Nicholas Yellow,Gregory House,Julie Anderson,Vicodin,20,1/day,Lipitor,4,1/day,Hydrocodone,2,2/day
+FP,12/04/18,Nicholas Yellow,Paul Melendez,Julie Anderson,Vicodin,20,1/day,Lipitor,4,1/day,Hydrocodone,2,2/day
+PD,Eric Foreman
+FD,Vicodin
+FDC,Prinivil
+FDC,Lipitor

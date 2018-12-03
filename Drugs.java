@@ -76,6 +76,10 @@ public class Drugs {
 		return contraInd.get(i);
 	}
 
+	public ArrayList<String> getContraIndArray() {
+		return contraInd;
+	}
+
 	public void setContraInd(int i, String s) {
 		contraInd.set(i, s);
 	}

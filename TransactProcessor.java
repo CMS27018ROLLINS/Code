@@ -17,133 +17,16 @@ public class TransactProcessor {
 		 return "";
 	 };
 	 
-	 public static void doctorsReport(String lookup, ArrayList<Doctor> doctor, ArrayList<Prescriptions> presc, ArrayList<DrugLine> dl, ArrayList<Drugs>drugsArray){
-		 HashMap<String, Integer> hm = new HashMap<>();
-		 
-		 
-		 
-	 }
+	public static String align(String s, int col){
+		int newCol = col - s.length();
+		String newS = s;
+		for (int i = 0; i < newCol; i++){
+			newS += " ";
+		}
+		return newS;
+	}
 	 
-	 public static void drugsContraInd(String lookup, ArrayList<Drugs> drugsArray){
-		 //print report to file 
-	 }
-	 
-	 public static void contactDoctor(String lookup, ArrayList<Doctor> d){
-		//print report to file
-	 }
-	 
-	 public static int lookupPatients(String s, ArrayList<Patients> p){
-		 int iReturn = -1;
-		 for (int i = 0; i < p.size(); i++){
-			if (p.get(i).getName().equals(s)){
-				iReturn = i;
-				break;				
-			}
-		 }
-		 return iReturn;
-	 }
-	 
-	 public static int lookupDoctor(String s, ArrayList<Doctor> d){
-		 int iReturn = -1;
-		 for (int i = 0; i < d.size(); i++){
-			if (d.get(i).getName().equals(s)){
-				iReturn = i;
-				break;				
-			}
-		 }
-		 return iReturn;
-	 }
-
-	 public static int lookupDrug(String s, ArrayList<Drugs> d){
-		 int iReturn = -1;
-		 for (int i = 0; i < d.size(); i++){
-			if (d.get(i).getName().equals(s)){
-				iReturn = i;
-				break;				
-			}
-		 }
-		 return iReturn;
-	 }
-
-	 public static void updatePrescriptions(String lookupID, String lkpDrug, ArrayList<DrugLine> dl){
-		 
-		 boolean foundID = false;
-		 int i = 0;
-		 for (i = 0; i < dl.size(); i++){
-			if (dl.get(i).getPrescID() == Integer.parseInt(lookupID)){
-				foundID = true;
-				break;				
-			}
-		 }
-		 if (foundID){
-			while (dl.get(i).getPrescID() == Integer.parseInt(lookupID)){
-				if (dl.get(i).getDrug().equals(lkpDrug)){
-					System.out.println("*********************************************************************************************************************");
-					System.out.println("Current Status:");
-					System.out.println(dl.get(i).getInfo());
-					if (dl.get(i).getRefillsLeft() > 0){
-						dl.get(i).setRefillsLeft(dl.get(i).getRefillsLeft() - 1);
-						dl.get(i).setTimesFilled(dl.get(i).getTimesFilled() + 1);
-						System.out.println("Refilled:");
-						System.out.println(dl.get(i).getInfo());
-						System.out.println("*********************************************************************************************************************");
-						System.out.println("");
-					}else{
-						System.out.println(unableToFillPrescription() + " -> Exceeded quantity");
-						System.out.println("*********************************************************************************************************************");
-						System.out.println("");
-					}
-				}
-				i++;
-			}
-		 }else{
-			 System.out.println("***********************************************************************************************");
-			 System.out.println("Current Status:");
-			 System.out.println(unableToFillPrescription() + " -> Prescription ID: "+ dl.get(0).fillZeros(Integer.parseInt(lookupID)) + " not found!!! ");
-			 System.out.println("***********************************************************************************************");
-			 System.out.println("");
-		 }
-	 }
-	 
-	 public static void newPrescription(ArrayList<Doctor> doctorArray, ArrayList<Patients> patientsArray, 
-             ArrayList<Pharmacists> pharmacistsArray, ArrayList<Drugs> drugsArray, 
-             ArrayList<Prescriptions> prescriptionsArray, ArrayList<DrugLine>druglineArray, ArrayList<String> strLine){
-		 
-		 int newPrescId = prescriptionsArray.get(prescriptionsArray.size() - 1).getPre_ID() + 1; //getting the last Presc ID and Incrementing 1
-		 //                                     (last position in    ArrayList).  last ID + 1 -> now we know the new Presc ID
-		 
-		 // Checking if Patients and Doctors exist 
-		 if (lookupPatients(strLine.get(1), patientsArray) == -1){
-			 Patients p = new Patients();
-			 p.setName(strLine.get(1));
-			 patientsArray.add(p);
-		 }
-
-		 if (lookupDoctor(strLine.get(2), doctorArray) == -1){
-			 Doctor d = new Doctor();
-			 d.setName(strLine.get(2));
-			 doctorArray.add(d);
-		 }
-		 //----------------------------------------------------
-		 
-		 Prescriptions presc = new Prescriptions(newPrescId, strLine.get(0), strLine.get(1), strLine.get(2), strLine.get(3));
-		 prescriptionsArray.add(presc);
-		 
-		 for (int i = 4; i < strLine.size(); i+= 3){
-			 if (lookupDrug(strLine.get(i), drugsArray) > -1){
-				 DrugLine dl = new DrugLine(newPrescId, strLine.get(i), Integer.parseInt(strLine.get(i+1)), strLine.get(i+2), Integer.parseInt(strLine.get(i+1)) - 1, 1);
-				 druglineArray.add(dl);
-			 }else{
-				 DrugLine dl = new DrugLine();
-				 dl.setPrescID(newPrescId);
-				 dl.setDrug(">> " + strLine.get(i) + " << Unavailable");
-				 druglineArray.add(dl);
-			 }
-			 
-		 }
-		 
-	 }
-	 
+//LOADING FILES METHODS BEGIN ****************************************************************************************************************	 
 	 /**
 	  * Method to load the Drugs.txt file into an ArrayList
 	  * @param inputFile File to be read
@@ -187,6 +70,7 @@ public class TransactProcessor {
 	    }
 	 }
 
+//LOADING FILES Page ....................................................................
 	 /**
 	  * Method to load the Doctor.txt file into an ArrayList
 	  * @param inputFile File to be read
@@ -218,7 +102,9 @@ public class TransactProcessor {
 			return arrayDoctor;
 	    }
 	 }
-	 
+
+//LOADING FILES Page....................................................................
+
 	 /**
 	  * Method to load the Patients.txt file into an ArrayList
 	  * @param inputFile File to be read
@@ -251,7 +137,9 @@ public class TransactProcessor {
 		  	return arrayPatients;
 	    }
 	 }
-	 
+
+//LOADING FILES Page....................................................................
+
 	 /**
 	  * Method to load the Pharmacists.txt file into an ArrayList
 	  * @param inputFile File to be read
@@ -284,7 +172,9 @@ public class TransactProcessor {
 		  	return arrayPharmacists;
 	    }
 	 }
-	 
+
+//LOADING FILES Page....................................................................
+
 	 /**
 	  * Method to load the Prescriptions.txt file into an ArrayList
 	  * @param inputFile File to be read
@@ -318,7 +208,9 @@ public class TransactProcessor {
 		  	return arrayPrescriptions;
         }
 	 }
-	 
+
+//LOADING FILES Page....................................................................
+
 	 /**
 	  * Method to load the DrugLine.txt file into an ArrayList
 	  * @param inputFile File to be read
@@ -353,12 +245,13 @@ public class TransactProcessor {
 		  	return arrayDrugLine;
 	    }
 	 }
+//LOADING FILES Page....................................................................
 	 
 	 /**
 	  * This method load txt files into arrays of object types: 
 	  * Doctor, Patients, Pharmacists, Drugs, Prescriptions, Drugline
 	  */
-	 public static void loadFiles(){
+	 public static void load_Process_Files(){
 		 
 			File doctor = new File("Doctor.txt");
 			File patients = new File("Patients.txt");
@@ -381,11 +274,97 @@ public class TransactProcessor {
 			drugsArray = loadDrugs(drugs);
 			prescriptionsArray = loadPrescriptions(prescriptions);
 			druglineArray = loadDrugLine(drugline);
+			
 			prescriptionsReport(prescriptionsArray, druglineArray);
 			processTransactions(doctorArray, patientsArray, pharmacistsArray, drugsArray, prescriptionsArray, druglineArray, transactions);
 			prescriptionsReport(prescriptionsArray, druglineArray);
 		 
 	 }
+//END LOADING FILES METHODS ********************************************************************************************************	
+	 
+//PROCESS FILES METHODS BEGIN ******************************************************************************************	
+	 public static void updatePrescriptions(String lookupID, String lkpDrug, ArrayList<DrugLine> dl){
+		 
+		 boolean foundID = false;
+		 int i = 0;
+		 for (i = 0; i < dl.size(); i++){
+			if (dl.get(i).getPrescID() == Integer.parseInt(lookupID)){
+				foundID = true;
+				break;				
+			}
+		 }
+		 if (foundID){
+			while (dl.get(i).getPrescID() == Integer.parseInt(lookupID)){
+				if (dl.get(i).getDrug().equals(lkpDrug)){
+					System.out.println("*********************************************************************************************************************");
+					System.out.println("Current Status:");
+					System.out.println(dl.get(i).getInfo());
+					if (dl.get(i).getRefillsLeft() > 0){
+						dl.get(i).setRefillsLeft(dl.get(i).getRefillsLeft() - 1);
+						dl.get(i).setTimesFilled(dl.get(i).getTimesFilled() + 1);
+						System.out.println("Refilled:");
+						System.out.println(dl.get(i).getInfo());
+						System.out.println("*********************************************************************************************************************");
+						System.out.println("");
+					}else{
+						System.out.println(unableToFillPrescription() + " -> Exceeded quantity");
+						System.out.println("*********************************************************************************************************************");
+						System.out.println("");
+					}
+				}
+				i++;
+			}
+		 }else{
+			 System.out.println("***********************************************************************************************");
+			 System.out.println("Current Status:");
+			 System.out.println(unableToFillPrescription() + " -> Prescription ID: "+ dl.get(0).fillZeros(Integer.parseInt(lookupID)) + " not found!!! ");
+			 System.out.println("***********************************************************************************************");
+			 System.out.println("");
+		 }
+	 }
+
+//PROCESS Files page......................................................................................
+		 
+	 public static void newPrescription(ArrayList<Doctor> doctorArray, ArrayList<Patients> patientsArray, 
+         ArrayList<Pharmacists> pharmacistsArray, ArrayList<Drugs> drugsArray, 
+         ArrayList<Prescriptions> prescriptionsArray, ArrayList<DrugLine>druglineArray, ArrayList<String> strLine){
+		 
+		 int newPrescId = prescriptionsArray.get(prescriptionsArray.size() - 1).getPre_ID() + 1; //getting the last Presc ID and Incrementing 1
+		 //                                     (last position in    ArrayList).  last ID + 1 -> now we know the new Presc ID
+		 
+		 // Checking if Patients and Doctors exist 
+		 if (lookupPatients(strLine.get(1), patientsArray) == -1){
+			 Patients p = new Patients();
+			 p.setName(strLine.get(1));
+			 patientsArray.add(p);
+		 }
+
+		 if (lookupDoctor(strLine.get(2), doctorArray) == -1){
+			 Doctor d = new Doctor();
+			 d.setName(strLine.get(2));
+			 doctorArray.add(d);
+		 }
+		 //----------------------------------------------------
+		 
+		 Prescriptions presc = new Prescriptions(newPrescId, strLine.get(0), strLine.get(1), strLine.get(2), strLine.get(3));
+		 prescriptionsArray.add(presc);
+		 
+		 for (int i = 4; i < strLine.size(); i+= 3){
+			 if (lookupDrug(strLine.get(i), drugsArray) > -1){
+				 DrugLine dl = new DrugLine(newPrescId, strLine.get(i), Integer.parseInt(strLine.get(i+1)), strLine.get(i+2), Integer.parseInt(strLine.get(i+1)) - 1, 1);
+				 druglineArray.add(dl);
+			 }else{
+				 DrugLine dl = new DrugLine();
+				 dl.setPrescID(newPrescId);
+				 dl.setDrug(">> " + strLine.get(i) + " << Unavailable");
+				 druglineArray.add(dl);
+			 }
+			 
+		 }
+		 
+	 }
+
+//PROCESS Files Page.............................................................................................	 
 	 
 	 public static void processTransactions(ArrayList<Doctor> doctorArray, ArrayList<Patients> patientsArray, 
 			                                ArrayList<Pharmacists> pharmacistsArray, ArrayList<Drugs> drugsArray, 
@@ -426,15 +405,19 @@ public class TransactProcessor {
 								updatePrescriptions(lookup, lkpDrug, druglineArray);
 							}
 							break;
-						case "FD": //Find doctors who prescribed a determined drug more then stipulated times
+						case "FD": //Prints doctors who prescribed a determined drug more than stipulated times
+							lookup = txt.next();
+							listOfDoctors(lookup, doctorArray, prescriptionsArray, druglineArray, drugsArray);
+							break;
+						case "PD": //Prints drugs prescribed more than stipulated times by a doctor
 							lookup = txt.next();
 							doctorsReport(lookup, doctorArray, prescriptionsArray, druglineArray, drugsArray);
 							break;
-						case "FDC":
+						case "FDC": //Prints a cross reference list of drugs and a named drug as a contraindication 
 							lookup = txt.next();
 							drugsContraInd(lookup, drugsArray);							
 							break;
-						case "CD":
+						case "CD": //Prints doctor info
 							lookup = txt.next();
 							contactDoctor(lookup, doctorArray);
 							break;
@@ -451,6 +434,236 @@ public class TransactProcessor {
 	 
 	 }
 	 
+//PROCESS FILES METHODS END *****************************************************************************************************
+	 
+//LOOKUP METHODS BEGIN **********************************************************************************************************
+	 
+	 public static int lookupArrayList(String lookup, ArrayList<String> s){
+		 int iReturn = -1;
+		 for (int i = 0; i < s.size(); i++){
+			if (s.get(i).equals(lookup)){
+				iReturn = i;
+				break;				
+			}
+		 }
+		 return iReturn;
+	 }
+	 
+//LOOKUP Page.............................................................................	 
+	 public static int lookupPatients(String s, ArrayList<Patients> p){
+		 int iReturn = -1;
+		 for (int i = 0; i < p.size(); i++){
+			if (p.get(i).getName().equals(s)){
+				iReturn = i;
+				break;				
+			}
+		 }
+		 return iReturn;
+	 }
+//LOOKUP Page.............................................................................	 
+	 public static int lookupDoctor(String s, ArrayList<Doctor> d){
+		 int iReturn = -1;
+		 for (int i = 0; i < d.size(); i++){
+			if (d.get(i).getName().equals(s)){
+				iReturn = i;
+				break;				
+			}
+		 }
+		 return iReturn;
+	 }
+//LOOKUP Page.............................................................................	 
+	 public static int lookupDrug(String s, ArrayList<Drugs> d){
+		 int iReturn = -1;
+		 for (int i = 0; i < d.size(); i++){
+			if (d.get(i).getName().equals(s)){
+				iReturn = i;
+				break;				
+			}
+		 }
+		 return iReturn;
+	 }
+//LOOKUP Page.............................................................................	 
+	 public static int lookupDrugLine(int lookup, ArrayList<DrugLine> dl){
+		 int iReturn = -1;
+		 for (int i = 0; i < dl.size(); i++){
+			if (dl.get(i).getPrescID() == lookup){
+				iReturn = i;
+				break;				
+			}
+		 }
+		 return iReturn;
+	 }
+	 
+//LOOKUP METHODS END ************************************************************************************************************	 
+	 
+//REPORT METHODS BEGIN **********************************************************************************************************
+	 
+	 public static void drugsContraInd(String lookup, ArrayList<Drugs> drugsArray){
+		 
+		 ArrayList<String> drugs = new ArrayList<>();
+		 
+		 for (int i = 0; i < drugsArray.size(); i++){
+			 for (int j = 0; j < drugsArray.get(i).getContraIndArray().size(); j++){
+				 if (drugsArray.get(i).getContraInd(j).equals(lookup)){
+					 drugs.add(drugsArray.get(i).getName());
+					 break;
+				 }
+				 
+			 }
+		 }
+		 try{
+				FileOutputStream outputFile = new FileOutputStream(lookup + " - Contraindications");
+				PrintWriter outFile = new PrintWriter(outputFile);
+				outFile.println("**********************************************");
+				outFile.println("  Contraindications Report : " + lookup );
+				outFile.println("**********************************************");
+				outFile.println("");
+				outFile.println("-----------------------------------------------");
+				outFile.println("  Drug Name ");
+				outFile.println("-----------------------------------------------");
+				for (int i = 0; i < drugs.size(); i++){
+					outFile.println("  " + drugs.get(i));
+				}
+				outFile.flush();
+				outFile.close();
+			}
+			catch (FileNotFoundException e) {
+	    	  System.out.println(e.toString());
+			}
+	 }
+	 
+//REPORT Page..................................................................................
+	 
+	 public static void contactDoctor(String lookup, ArrayList<Doctor> d){
+		 boolean found = false;
+		 for (int i = 0; i < d.size(); i++){
+			 if ( d.get(i).getName().equals(lookup) ){
+				 try{
+						FileOutputStream outputFile = new FileOutputStream(lookup + " Doctor Info");
+						PrintWriter outFile = new PrintWriter(outputFile);
+						outFile.println("**********************************************");
+						outFile.println("  Information Report: " + lookup );
+						outFile.println("**********************************************");
+						outFile.println("");
+						outFile.println("-----------------------------------------------");
+						outFile.println("  " + d.get(i).getInfo());
+						outFile.println("-----------------------------------------------");
+						outFile.flush();
+						outFile.close();
+					}
+					catch (FileNotFoundException e) {
+			    	  System.out.println(e.toString());
+					}
+				 found = true;
+				 break;
+			 }
+		 }
+		 if (!found){
+			System.out.println("Doctor not found!!!");
+		 }
+	 }
+
+//REPORT Page..................................................................................
+	 
+	 public static void listOfDoctors(String drugLookup, ArrayList<Doctor> doctor, ArrayList<Prescriptions> presc, ArrayList<DrugLine> dl, ArrayList<Drugs>drugsArray){
+			 ArrayList<String> doctorList = new ArrayList<>();
+			 ArrayList<Integer> drugQty = new ArrayList<>();
+			 
+			 int prescId = 0;
+			 int i = 0;
+			 int iPresc = 0;
+			 int iDoctor = 0;
+			 while ( i < dl.size() ){
+				 prescId = dl.get(i).getPrescID();
+				 System.out.println("Presc ID Prescription: " + presc.get(iPresc).getPre_ID());
+				 while (dl.get(i).getPrescID() == prescId){
+					 System.out.println("Presc ID DL: " + dl.get(i).getPrescID());
+					 if (drugLookup.equals(dl.get(i).getDrug())){
+						 
+						 iDoctor = lookupArrayList(presc.get(iPresc).getDoctor(),doctorList);
+						 if ( iDoctor > -1){
+							 drugQty.set(iDoctor, drugQty.get(iDoctor) +  dl.get(i).getQty());
+						 }else{
+							 doctorList.add(presc.get(iPresc).getDoctor());
+							 drugQty.add(dl.get(i).getQty());
+						 }
+						 
+					 }
+					 if ( i < dl.size() - 1){
+						 i++;
+					 }else{
+						 i++;
+						 break;
+					 }
+				 }
+				 iPresc++;
+			 }
+			 printReportToFile("Drug Report: ","Doctor Name", drugLookup, doctorList, drugQty);
+     }
+
+//REPORT Page..................................................................................
+
+	 public static void doctorsReport(String lookup, ArrayList<Doctor> doctor, ArrayList<Prescriptions> presc, ArrayList<DrugLine> dl, ArrayList<Drugs>drugsArray){
+			 ArrayList<String> drugName = new ArrayList<>();
+			 ArrayList<Integer> drugQty = new ArrayList<>();
+			 ArrayList<Integer> prescId = new ArrayList<>();
+			 
+			 if (lookupDoctor(lookup, doctor) > -1){
+				 
+				 //Storing all Prescription IDs referred to the doctor
+				 for (int i = 0; i < presc.size(); i++){
+					 if (presc.get(i).getDoctor().equals(lookup)){
+						 prescId.add(presc.get(i).getPre_ID());
+					 }
+				 }
+				 //--------------------------------------------------
+				 // Filling up Array with drugs and quantities prescribed
+				 int j = 0;
+				 int iDrugName = -1;
+				 for (int i = 0; i < prescId.size(); i++){
+					 j = lookupDrugLine(prescId.get(i), dl);
+					 while (dl.get(j).getPrescID() == prescId.get(i)){
+						 iDrugName = lookupArrayList(dl.get(j).getDrug(), drugName);
+						 if (iDrugName > -1){
+							 drugQty.set(iDrugName, drugQty.get(iDrugName) + dl.get(j).getQty());
+							 j++;
+						 }else{
+							 drugQty.add(dl.get(j).getQty());
+							 drugName.add(dl.get(j).getDrug());
+							 if (dl.size() - 1 < j){
+								 j++;
+							 }else{
+								 break;
+							 }
+						 }
+					 }
+				 }
+				 //--------------------------------------------------
+				 //Checking drugs that did not exceed the stipulated times
+				 int iDrug = 0;
+				 
+				 for (int i = 0; i < drugName.size(); i++){
+					 iDrug = lookupDrug(drugName.get(i), drugsArray);
+					 if ( iDrug > -1){
+						 if (drugsArray.get(iDrug).getStipTimes() >= drugQty.get(i)){
+							 drugName.remove(i);
+							 drugQty.remove(i);
+							 i = -1;
+						 }
+					 }else{
+						 drugName.remove(i);
+						 drugQty.remove(i);
+						 i = -1;
+					 }
+				 }
+				 printReportToFile("Doctor Report: ","Drug Name", lookup + "- Drugs Prescribed", drugName, drugQty);
+			 }else{
+				System.out.println("Doctor not found!!!");
+			 }
+	 }
+
+//REPORT Page..................................................................................
+
 	 public static void prescriptionsReport(ArrayList<Prescriptions> pr, ArrayList<DrugLine> dl){
 		 
 		System.out.println("-----------------------------------------------------------------------------------");
@@ -482,20 +695,40 @@ public class TransactProcessor {
 			System.out.println("--------------------------------------------------------------------------------------------------------");
 			System.out.println("");
 		}
-		
-
 	 }
+
+//REPORT Page..................................................................................
+
+	 public static void printReportToFile(String title, String col, String outFileName, ArrayList<String> s, ArrayList<Integer> qty){
+
+		 try{
+				FileOutputStream outputFile = new FileOutputStream(outFileName);
+				PrintWriter outFile = new PrintWriter(outputFile);
+				outFile.println("**********************************************");
+				outFile.println("  " + title + ": " + outFileName );
+				outFile.println("**********************************************");
+				outFile.println("");
+				outFile.println("-----------------------------------------------");
+				outFile.println("          " + align(col, 25) +"| Quantity ");
+				outFile.println("-----------------------------------------------");
+				for (int i = 0; i < s.size(); i++){
+					outFile.println("  " + align(s.get(i), 38) + align(Integer.toString(qty.get(i)),5));
+				}
+				outFile.flush();
+				outFile.close();
+			}
+			catch (FileNotFoundException e) {
+	    	  System.out.println(e.toString());
+			}
+	 }
+
 	 
-	 	
+// END REPORTS ************************************************************************************************************************************	 	
 	
 //-- Main ---------------------------------------------------------------------	
 	public static void main(String[] args){
 		
-		loadFiles();
-		
-		
-		
-		
+		load_Process_Files();
 	}
 	
 //-----------------------------------------------------------------------------

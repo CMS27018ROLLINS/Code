@@ -7,12 +7,12 @@ Prinivil,lisinopril,Merck,antihypertensive,5,true,lisinopril,calcium phosphate,m
 Lipitor,Atorvastatin,Pfizer,statin,100,false,calcium carbonate,candelilla wax,croscarmellose sodium,/,none
 Glucpphage,Metformin,Bristol-Myers Squibb,biguanides,100,false,sodium carboxymethyl cellulose,hypromellose,microcrystalline cellulose,/,Acute or chronic metabolic acidosis
 Zofran,Ondansetron,GlaxoSmithKline,Antiemetic,100,false,aspartame,gelatin,mannitol,methylparaben sodium,propylparaben sodium,/,Clarithromycin, Lotronex
-Motrin,propanoic acid,Johnson&Johnson,NSAID,10,true,carnauba wax,colloidal silicon dioxide,croscarmellose sodium,hypromellose,lactose,/,Aleve
+Motrin,propanoic acid,Johnson&Johnson,NSAID,10,true,carnauba wax,colloidal silicon dioxide,croscarmellose sodium,hypromellose,lactose,/,Aleve,Vicodin
 Ramipril,Tritace,Pfizer,Angiotensin,100,false,calcium sulphate dihydrate,pregelatinized starch,sodium bicarbonate,/,none
-Co-codamol,Codeine,Zentiva,Painkiller,10,true,povidone,talc, stearic acid,magnesium stearate,/,none
-Amoxicillin,Carboxylic Acid,Drugs Inc,Antibiotic,100,false,magnesium stearate,maize starch,gelatin, erythrosin,/,none
+Co-codamol,Codeine,Zentiva,Painkiller,10,true,povidone,talc, stearic acid,magnesium stearate,/,Prinivil,Lipitor
+Amoxicillin,Carboxylic Acid,Drugs Inc,Antibiotic,100,false,magnesium stearate,maize starch,gelatin, erythrosin,/,Prinivil
 Naltrexone,Vivitrex,Pfizer,Opiate,3,true,naltrexone hydrochloride,lactose,microcrystalline cellulose,crospovidone,silicon dioxide,magnesium stearate,/,Vicodin
 Hydrocodone,Dihydrocodeinone,Epocrates,Opiate,5,true,colloidal silicon dioxide,crospovidone,magnesium stearate,microcrystalline cellulose,povidone,pregelatinized starch,/,Vicodin
-Clarithromycin,Methylerythromycin,Pfizer,Antibiotic,10,true,clarithromycin,lactose monohydrate,magnesium stearate,propylene glycol,/,Zofran
+Clarithromycin,Methylerythromycin,Pfizer,Antibiotic,10,true,clarithromycin,lactose monohydrate,magnesium stearate,propylene glycol,/,Zofran,Vicodin
 Lotronex,Alosetron,Abbott Labs,Receptor Antagonists,100,false,lactose,magnesium stearate,microcrystalline cellulose,/,Zofran
-Aleve,Naproxen,Abbott Labs,NSAID,100,false,FD&C blue #2 lake,hypromellose,magnesium stearate,microcrystalline cellulose,polyethylene glycol,povidone,talc,/,Motrin,Triacetin
+Aleve,Naproxen,Abbott Labs,NSAID,100,false,FD&C blue #2 lake,hypromellose,magnesium stearate,microcrystalline cellulose,polyethylene glycol,povidone,talc,/,Motrin,Triacetin,Vicodin
