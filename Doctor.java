@@ -1,7 +1,11 @@
+//Group Project
+//May, Felipe, Lauren
+
 public class Doctor extends People {
 	
 	private String spec; // Specialization
-
+	
+	//Constructors---------------------------------------------------------------
 	public Doctor() {
 		super();
 		spec = "";
@@ -11,7 +15,7 @@ public class Doctor extends People {
 		super(u_Name, u_Address, u_Tel);
 		spec = u_Spec;
 	}
-
+	// Getters & Setters -------------------------------------------------------
 	public String getSpec() {
 		return spec;
 	}
@@ -19,10 +23,12 @@ public class Doctor extends People {
 	public void setSpec(String u_Spec) {
 		spec = u_Spec;
 	}
+	//--------------------------------------------------------------------------
 	
 	public String getInfo() {
 		 return "\n Name: " + super.getName() + "\n Specialization: " + getSpec() + "\n Tel: " + super.getTel() + "\n Address: " + super.getAddress();
 	} 
+	//--------------------------------------------------------------------------
 	
 	public String getInfoReport() {
 		 return "  " + super.align(super.getName(), 27) + super.align(getSpec(), 29) + super.align(super.getTel(), 20) + super.align(super.getAddress(),20);
