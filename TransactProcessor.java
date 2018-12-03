@@ -748,14 +748,14 @@ public class TransactProcessor {
 		 try{
 				FileOutputStream outputFile = new FileOutputStream("updatedDoctor.txt");
 				PrintWriter outFile = new PrintWriter(outputFile);
-				outFile.println("********************************************************************************************************");
-				outFile.println("                               >>>>>     UPDATED DOCTOR FILE     <<<<<                                  ");
-				outFile.println("********************************************************************************************************");
+				outFile.println("************************************************************************************************************");
+				outFile.println("                                 >>>>>     UPDATED DOCTOR FILE     <<<<<                                    ");
+				outFile.println("************************************************************************************************************");
 				outFile.println("");
 				if (!doctorArray.isEmpty()){
-					outFile.println("-----------------------------------------------------------------------------------------------------");
-					outFile.println("    Name                  |       Specialization     |     Phone     |           Address           | ");
-					outFile.println("-----------------------------------------------------------------------------------------------------");
+					outFile.println("---------------------------------------------------------------------------------------------------------");
+					outFile.println("    Name                  |       Specialization     |       Phone       |           Address           | ");
+					outFile.println("---------------------------------------------------------------------------------------------------------");
 				}
 				for (int i = 0; i < doctorArray.size(); i++){
 					outFile.println(doctorArray.get(i).getInfoReport());
@@ -776,12 +776,35 @@ public class TransactProcessor {
 				outFile.println("***************************************************************************************************************************");
 				outFile.println("");
 				if (!patientsArray.isEmpty()){
-					outFile.println("--------------------------------------------------------------------------------------------------------------------------");
-					outFile.println("    Name                  |       Insurance Provider      |      SSN      |     Phone     |           Address           | ");
-					outFile.println("--------------------------------------------------------------------------------------------------------------------------");
+					outFile.println("------------------------------------------------------------------------------------------------------------------------------");
+					outFile.println("    Name                  |       Insurance Provider      |      SSN      |       Phone       |           Address           | ");
+					outFile.println("------------------------------------------------------------------------------------------------------------------------------");
 				}
 				for (int i = 0; i < patientsArray.size(); i++){
 					outFile.println(patientsArray.get(i).getInfoReport());
+				}
+				outFile.flush();
+				outFile.close();
+			}
+			catch (FileNotFoundException e) {
+	    	  System.out.println(e.toString());
+			}
+		 //--------------------------------------------------------------
+		 //Printing Pharmacists Array
+		 try{
+				FileOutputStream outputFile = new FileOutputStream("updatedPharmacists.txt");
+				PrintWriter outFile = new PrintWriter(outputFile);
+				outFile.println("***************************************************************************************************************************");
+				outFile.println("                                     >>>>>     UPDATED PHARMACISTS FILE     <<<<<                                          ");
+				outFile.println("***************************************************************************************************************************");
+				outFile.println("");
+				if (!pharmacistsArray.isEmpty()){
+					outFile.println("------------------------------------------------------------------------------------------------------------------------------");
+					outFile.println("    Name                  |     Certificate Exp. Date     |      SSN      |       Phone       |           Address           | ");
+					outFile.println("------------------------------------------------------------------------------------------------------------------------------");
+				}
+				for (int i = 0; i < pharmacistsArray.size(); i++){
+					outFile.println(pharmacistsArray.get(i).getInfoReport());
 				}
 				outFile.flush();
 				outFile.close();

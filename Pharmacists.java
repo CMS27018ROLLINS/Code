@@ -35,6 +35,11 @@ public class Pharmacists extends People {
 		 return "Name: " + super.getName() + " Cert Date: " + getCertdate() + " SSN: " + getSsn_Number() + " Tel: " + super.getTel() + " Address: " + super.getAddress();
 	} 
 
+	public String getInfoReport() {
+		 return "  " + super.align(super.getName(), 35) + super.align(getCertdate(), 25) + super.align(getSsn_Number(), 17) + super.align(super.getTel(), 19) + 
+			       super.align(super.getAddress(),30);
+	} 
+
 	
 
 

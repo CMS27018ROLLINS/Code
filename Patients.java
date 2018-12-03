@@ -35,7 +35,7 @@ public class Patients extends People {
 	} 
 
 	public String getInfoReport() {
-		 return "  " + super.align(super.getName(), 35) + super.align(getInsProvider(), 25) + super.align(getssn_Number(), 16) + super.align(super.getTel(), 16) + 
+		 return "  " + super.align(super.getName(), 35) + super.align(getInsProvider(), 25) + super.align(getssn_Number(), 17) + super.align(super.getTel(), 19) + 
 				       super.align(super.getAddress(),30);
 	} 
 

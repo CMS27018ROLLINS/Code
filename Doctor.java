@@ -26,7 +26,7 @@ public class Doctor extends People {
 	} 
 	
 	public String getInfoReport() {
-		 return "  " + super.align(super.getName(), 27) + super.align(getSpec(), 29) + super.align(super.getTel(), 18) + super.align(super.getAddress(),20);
+		 return "  " + super.align(super.getName(), 27) + super.align(getSpec(), 29) + super.align(super.getTel(), 20) + super.align(super.getAddress(),20);
 	} 
 	
 
