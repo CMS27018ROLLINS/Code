@@ -1,6 +1,4 @@
-import java.util.HashMap;
-
-public class Doctor extends People /*implements Information*/ {
+public class Doctor extends People {
 	
 	private String spec; // Specialization
 
@@ -21,13 +19,15 @@ public class Doctor extends People /*implements Information*/ {
 	public void setSpec(String u_Spec) {
 		spec = u_Spec;
 	}
-//----------------Get Info--------------------------------------
-	public String getInfo() { 
-		 return "Name: " + super.getName() +
-				 "Specilization: " + getSpec() + 
-				 "Tel: " + super.getTel()+
-				 "Address: " + super.getAddress();
-		
-	}
+	
+	public String getInfo() {
+		 return "\n Name: " + super.getName() + "\n Specialization: " + getSpec() + "\n Tel: " + super.getTel() + "\n Address: " + super.getAddress();
+	} 
+	
+	public String getInfoReport() {
+		 return "  " + super.align(super.getName(), 27) + super.align(getSpec(), 29) + super.align(super.getTel(), 20) + super.align(super.getAddress(),20);
+	} 
+	
+
 
 }
