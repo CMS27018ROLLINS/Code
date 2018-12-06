@@ -4,31 +4,31 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class DrugsTest {
+public class DrugsTest {
 
 	@Test
-	void testDrugs() {
+	public void testDrugs() {
 			Drugs n = new Drugs();
 			assertNotNull(n);
 	}
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testDrugsStringStringStringStringIntBoolean() {
+	public void testDrugsStringStringStringStringIntBoolean() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		assertTrue(motrin.getType().equals("NSAID"));
 	}
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testGetName() {
+	public void testGetName() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		assertTrue(motrin.getName().equals("Motrin"));
 	}
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testSetName() {
+	public void testSetName() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		motrin.setName("Tylenol");
 		assertFalse(motrin.getName().equals("Motrin"));
@@ -36,14 +36,14 @@ class DrugsTest {
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testGetChem_Name() {
+	public void testGetChem_Name() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		assertTrue(motrin.getChem_Name().equals("Propanoic"));
 	}
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testSetChem_Name() {
+	public void testSetChem_Name() {
 		Drugs motrin = new Drugs("Motrin", "Loana", "Johnson&Johnson","NSAID", 25, false);
 		motrin.setChem_Name("Propanoic");
 		assertTrue(motrin.getChem_Name().equals("Propanoic"));
@@ -51,7 +51,7 @@ class DrugsTest {
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testGetIngredients() {
+	public void testGetIngredients() {
 		Drugs motrin = new Drugs("Motrin", "Loana", "Johnson&Johnson","NSAID", 25, false);
 		motrin.addIngredients("carnauba wax");
 		motrin.addIngredients("magnesium");
@@ -61,7 +61,7 @@ class DrugsTest {
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testSetIngredients() {
+	public void testSetIngredients() {
 		Drugs motrin = new Drugs("Motrin", "Loana", "Johnson&Johnson","NSAID", 25, false);
 		motrin.addIngredients("carnauba wax");
 		motrin.addIngredients("magnesium");
@@ -71,7 +71,7 @@ class DrugsTest {
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testAddIngredients() {
+	public void testAddIngredients() {
 		Drugs motrin = new Drugs("Motrin", "Loana", "Johnson&Johnson","NSAID", 25, false);
 		motrin.addIngredients("carnauba wax");
 		motrin.addIngredients("lactose");
@@ -81,14 +81,14 @@ class DrugsTest {
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testGetManufacture() {
+	public void testGetManufacture() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		assertTrue(motrin.getManufacture().equals("Johnson&Johnson"));	
 	}
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testSetManufacture() {
+	public void testSetManufacture() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Honest","NSAID", 25, false);
 		motrin.setManufacture("Johnson&Johnson");
 		assertTrue(motrin.getManufacture().equals("Johnson&Johnson"));	
@@ -96,21 +96,21 @@ class DrugsTest {
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testGetType() {
+	public void testGetType() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Honest","NSAID", 25, false);
 		assertTrue(motrin.getType().equals("NSAID"));
 	}
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testSetType() {
+	public void testSetType() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Honest","NSAID", 25, false);
 		motrin.setType("Opiod");
 		assertTrue(motrin.getType().equals("Opiod"));	}
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testGetContraInd() {
+	public void testGetContraInd() {
 		Drugs motrin = new Drugs("Motrin", "Loana", "Johnson&Johnson","NSAID", 25, false);
 		motrin.addContraInd("Aleve");
 		assertTrue(motrin.getContraInd(0).equals("Aleve"));	
@@ -118,7 +118,7 @@ class DrugsTest {
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testGetContraIndArray() {
+	public void testGetContraIndArray() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		motrin.addContraInd("Aleve");
 		motrin.addContraInd("Tylenol");
@@ -127,7 +127,7 @@ class DrugsTest {
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testSetContraInd() {
+	public void testSetContraInd() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		motrin.setContraInd(0,"Aleve");
 		System.out.println(motrin.getContraInd(0));
@@ -136,7 +136,7 @@ class DrugsTest {
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testAddContraInd() {
+	public void testAddContraInd() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		motrin.addContraInd("Aleve");
 		assertTrue(motrin.getContraInd(0).equals("Aleve"));		
@@ -144,28 +144,28 @@ class DrugsTest {
 	//----------------------------------------------------------------------------------------
 
 	@Test
-	void testGetStipTimes() {
+	public void testGetStipTimes() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		assertTrue(motrin.getStipTimes() == 25);	
 	}
 
 	//----------------------------------------------------------------------------------------
 	@Test
-	void testSetStipTimes() {
+	public void testSetStipTimes() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		motrin.setStipTimes(20);
 		assertTrue(motrin.getStipTimes() == 20);	
 	}
 	//----------------------------------------------------------------------------------------
 	@Test
-	void testGetMonitored() {
+	public void testGetMonitored() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		assertTrue(motrin.getMonitored() == false);	
 	}
 
 	//----------------------------------------------------------------------------------------
 	@Test
-	void testSetMonitored() {
+	public void testSetMonitored() {
 		Drugs motrin = new Drugs("Motrin", "Propanoic", "Johnson&Johnson","NSAID", 25, false);
 		motrin.setMonitored(true);
 		assertTrue(motrin.getMonitored() == true);	
